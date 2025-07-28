@@ -1,40 +1,80 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Все отзывы</h1>
-<p>Всего отзывов: {{ reviews|length }}</p>
+<p>Всего отзывов: <span id="reviews-count">{{ reviews_by_subject.values() | map('length') | sum }}</span></p>
 
 <div class="row">
     <!-- Левая колонка: фильтры -->
     <div class="col-md-3 text-start">
-        <strong>Лектор:</strong>
+        <strong>Фильтр по преподавателям:</strong>
         <div class="mt-2">
-            <!-- Фильтры по лекторам с подфильтрами практиков -->
-            {% for lecturer_data in filter_data %}
-            <div class="lecturer-group mb-3">
-                <div class="form-check">
-                    <input class="form-check-input lecturer-filter" type="checkbox" id="lecturer-{{ loop.index }}"
-                        value="{{ lecturer_data.lecturer }}" checked>
-                    <label class="form-check-label fw-bold" for="lecturer-{{ loop.index }}">
-                        {{ lecturer_data.lecturer }}
-                    </label>
+            <!-- Фильтры по предметам и преподавателям -->
+            {% for subject, lecturers in subjects_with_teachers.items() %}
+            <div class="subject-group mb-4">
+                <!-- Заголовок предмета -->
+                <div class="fw-bold text-primary mb-2" style="font-size: 0.95em;">
+                    {{ subject }}
                 </div>
-
-                <!-- Подфильтры по практикам -->
-                <div class="ms-3 mt-1 practitioner-subfilters" data-lecturer="{{ lecturer_data.lecturer }}">
-                    <small class="text-muted"><strong>Практик:</strong></small>
-                    {% set outer_loop = loop %}
-                    {% for practitioner in lecturer_data.practitioners %}
-                    <div class="form-check form-check-sm">
-                        <input class="form-check-input practitioner-filter" type="checkbox"
-                            id="prac-{{ outer_loop.index }}-{{ loop.index }}" value="{{ practitioner }}"
-                            data-lecturer="{{ lecturer_data.lecturer }}" checked>
-                        <label class="form-check-label text-muted small"
-                            for="prac-{{ outer_loop.index }}-{{ loop.index }}">
-                            {{ practitioner }}
+                
+                <!-- Лекторы этого предмета -->
+                {% for lecturer, lecturer_data in lecturers.items() %}
+                <div class="lecturer-group mb-3 ms-2">
+                    <div class="form-check">
+                        <input class="form-check-input lecturer-filter" type="checkbox" 
+                            id="lecturer-{{ subject|replace(' ', '_') }}-{{ loop.index }}"
+                            value="{{ lecturer }}" checked>
+                        <label class="form-check-label fw-bold" 
+                            for="lecturer-{{ subject|replace(' ', '_') }}-{{ loop.index }}" 
+                            style="font-size: 0.9em;">
+                            {{ lecturer }}
+                            <!-- Рейтинги лектора -->
+                            {% if lecturer_data.stats.complexity or lecturer_data.stats.interest %}
+                            <div class="text-muted small mt-1">
+                                {% if lecturer_data.stats.complexity %}
+                                <span title="Сложность лекций" style="cursor: help;">💀: {{ lecturer_data.stats.complexity }}</span>
+                                {% endif %}
+                                {% if lecturer_data.stats.interest %}
+                                <span title="Интерес лекций" style="cursor: help;" class="ms-2">⭐️: {{ lecturer_data.stats.interest }}</span>
+                                {% endif %}
+                            </div>
+                            {% endif %}
                         </label>
                     </div>
-                    {% endfor %}
+
+                    <!-- Подфильтры по практикам -->
+                    <div class="ms-3 mt-1 practitioner-subfilters" data-lecturer="{{ lecturer }}">
+                        <small class="text-muted"><strong>Практики:</strong></small>
+                        {% set outer_loop = loop %}
+                        {% for practitioner in lecturer_data.practitioners %}
+                        <div class="form-check form-check-sm">
+                            <input class="form-check-input practitioner-filter" type="checkbox"
+                                id="prac-{{ subject|replace(' ', '_') }}-{{ outer_loop.index }}-{{ loop.index }}" 
+                                value="{{ practitioner }}"
+                                data-lecturer="{{ lecturer }}" checked>
+                            <label class="form-check-label text-muted small"
+                                for="prac-{{ subject|replace(' ', '_') }}-{{ outer_loop.index }}-{{ loop.index }}">
+                                {{ practitioner }}
+                                <!-- Рейтинги практика по практикам -->
+                                {% if teacher_stats[practitioner] %}
+                                <div class="text-muted" style="font-size: 0.75em;">
+                                    {% if teacher_stats[practitioner].practice_complexity %}
+                                    <span title="Сложность практик" style="cursor: help;">💀: {{ teacher_stats[practitioner].practice_complexity }}</span>
+                                    {% elif teacher_stats[practitioner].type == 'practitioner' and teacher_stats[practitioner].complexity %}
+                                    <span title="Сложность практик" style="cursor: help;">💀: {{ teacher_stats[practitioner].complexity }}</span>
+                                    {% endif %}
+                                    {% if teacher_stats[practitioner].practice_interest %}
+                                    <span title="Интерес практик" style="cursor: help;" class="ms-1">⭐️: {{ teacher_stats[practitioner].practice_interest }}</span>
+                                    {% elif teacher_stats[practitioner].type == 'practitioner' and teacher_stats[practitioner].interest %}
+                                    <span title="Интерес практик" style="cursor: help;" class="ms-1">⭐️: {{ teacher_stats[practitioner].interest }}</span>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
+                {% endfor %}
             </div>
             {% endfor %}
         </div>
@@ -43,19 +83,26 @@
     <!-- Правая колонка: отзывы -->
     <div class="col-md-9">
         <div id="reviews-container">
+            {% set review_counter = namespace(value=0) %}
+            {% for subject, reviews in reviews_by_subject.items() %}
+            <!-- Заголовок предмета -->
+            <div class="subject-header mb-3">
+                <h3 class="text-primary border-bottom pb-2">{{ subject }}</h3>
+            </div>
+            
             {% for review in reviews %}
+            {% set review_counter.value = review_counter.value + 1 %}
             <div class="card mb-3 review-item" data-lecturer="{{ review.lecturer }}"
-                data-practitioner="{{ review.practitioner }}">
+                data-practitioner="{{ review.practitioner }}" data-subject="{{ review.subject }}">
                 <div class="card-header">
                     <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#review-all-{{ loop.index }}" aria-expanded="true"
-                        aria-controls="review-all-{{ loop.index }}">
-                        <strong>Отзыв {{ loop.index }}</strong>
-                        <small class="text-muted ms-2">{{ review.subject }}</small>
+                        data-bs-toggle="collapse" data-bs-target="#review-{{ review_counter.value }}" aria-expanded="true"
+                        aria-controls="review-{{ review_counter.value }}">
+                        <strong>Отзыв {{ review_counter.value }}</strong>
                         <span class="float-end collapse-indicator">−</span>
                     </button>
                 </div>
-                <div id="review-all-{{ loop.index }}" class="collapse show">
+                <div id="review-{{ review_counter.value }}" class="collapse show">
                     <div class="card-body">
                         <!-- О лекциях -->
                         <div class="mb-4">
@@ -63,8 +110,7 @@
                                 <h5 class="mb-0">О лекциях:</h5>
                                 <div class="text-end">
                                     {% if review.lectures.complexity != '—' %}
-                                    <span class="me-3"><strong>Сложность:</strong> {{ review.lectures.complexity
-                                        }}</span>
+                                    <span class="me-3"><strong>Сложность:</strong> {{ review.lectures.complexity }}</span>
                                     {% endif %}
                                     {% if review.lectures.interest != '—' %}
                                     <span><strong>Интерес:</strong> {{ review.lectures.interest }}</span>
@@ -86,8 +132,7 @@
                                 <h5 class="mb-0">О практиках:</h5>
                                 <div class="text-end">
                                     {% if review.practices.complexity != '—' %}
-                                    <span class="me-3"><strong>Сложность:</strong> {{ review.practices.complexity
-                                        }}</span>
+                                    <span class="me-3"><strong>Сложность:</strong> {{ review.practices.complexity }}</span>
                                     {% endif %}
                                     {% if review.practices.interest != '—' %}
                                     <span><strong>Интерес:</strong> {{ review.practices.interest }}</span>
@@ -105,6 +150,7 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
             {% endfor %}
         </div>
     </div>
@@ -160,10 +206,15 @@
                 }
             });
 
-            // Применяем фильтрацию
+            // Применяем фильтрацию к отзывам
+            const subjectHeaders = document.querySelectorAll('.subject-header');
+            const subjectsWithVisibleReviews = new Set();
+            let visibleReviewsCount = 0;
+
             reviewItems.forEach(item => {
                 const itemLecturer = item.dataset.lecturer;
                 const itemPractitioner = item.dataset.practitioner;
+                const itemSubject = item.dataset.subject;
 
                 let shouldShow = false;
 
@@ -171,11 +222,22 @@
                     const allowedPractitioners = selectedFilters.get(itemLecturer);
                     if (allowedPractitioners.includes(itemPractitioner)) {
                         shouldShow = true;
+                        subjectsWithVisibleReviews.add(itemSubject);
+                        visibleReviewsCount++;
                     }
                 }
 
                 item.style.display = shouldShow ? 'block' : 'none';
             });
+
+            // Показываем/скрываем заголовки предметов
+            subjectHeaders.forEach(header => {
+                const subjectName = header.querySelector('h3').textContent.trim();
+                header.style.display = subjectsWithVisibleReviews.has(subjectName) ? 'block' : 'none';
+            });
+
+            // Обновляем счетчик отзывов
+            document.getElementById('reviews-count').textContent = visibleReviewsCount;
         }
 
 

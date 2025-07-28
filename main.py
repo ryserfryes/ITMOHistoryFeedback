@@ -148,6 +148,16 @@ def reviews():
                 }
             })
     
+    # Группируем отзывы по предметам для отображения
+    reviews_by_subject = defaultdict(list)
+    for review in all_reviews:
+        subject = review['subject']
+        reviews_by_subject[subject].append(review)
+    
+    # Сортируем отзывы внутри каждого предмета по ID
+    for subject in reviews_by_subject:
+        reviews_by_subject[subject].sort(key=lambda x: int(x['id']) if x['id'].isdigit() else 0)
+    
     # Собираем уникальных лекторов и их практиков для фильтров
     lecturers_with_practitioners = {}
     for review in all_reviews:
@@ -166,12 +176,156 @@ def reviews():
             'practitioners': sorted(practitioners)
         })
     
-    # Сортируем отзывы по ID для хронологического порядка
-    all_reviews.sort(key=lambda x: int(x['id']) if x['id'].isdigit() else 0)
+    # Собираем статистику по преподавателям (лекторам и практикам)
+    teacher_stats = {}
+    
+    # Статистика по лекторам (по лекциям)
+    for lecturer_name, responses in LECTURERS.items():
+        complexity_total, complexity_cnt = 0.0, 0
+        interest_total, interest_cnt = 0.0, 0
+        
+        for r in responses:
+            # Сложность лекций
+            raw_complexity = r.get(LECTURE_COMPLEXITY_Q)
+            try:
+                num = float(raw_complexity)
+                complexity_total += num
+                complexity_cnt += 1
+            except (TypeError, ValueError):
+                pass
+                
+            # Интерес лекций
+            raw_interest = r.get(LECTURE_INTEREST_Q)
+            try:
+                num = float(raw_interest)
+                interest_total += num
+                interest_cnt += 1
+            except (TypeError, ValueError):
+                pass
+        
+        complexity_avg = round(complexity_total / complexity_cnt, 1) if complexity_cnt else None
+        interest_avg = round(interest_total / interest_cnt, 1) if interest_cnt else None
+        
+        teacher_stats[lecturer_name] = {
+            'complexity': complexity_avg,
+            'interest': interest_avg,
+            'type': 'lecturer'
+        }
+    
+    # Статистика по практикам (по практикам)
+    practitioner_stats = {}
+    for review in all_reviews:
+        practitioner = review['practitioner']
+        
+        if practitioner not in practitioner_stats:
+            practitioner_stats[practitioner] = {
+                'complexity_total': 0.0,
+                'complexity_cnt': 0,
+                'interest_total': 0.0,
+                'interest_cnt': 0
+            }
+        
+        # Сложность практик
+        if review['practices']['complexity'] != '—':
+            try:
+                num = float(review['practices']['complexity'])
+                practitioner_stats[practitioner]['complexity_total'] += num
+                practitioner_stats[practitioner]['complexity_cnt'] += 1
+            except (TypeError, ValueError):
+                pass
+        
+        # Интерес практик
+        if review['practices']['interest'] != '—':
+            try:
+                num = float(review['practices']['interest'])
+                practitioner_stats[practitioner]['interest_total'] += num
+                practitioner_stats[practitioner]['interest_cnt'] += 1
+            except (TypeError, ValueError):
+                pass
+    
+    # Вычисляем средние для практиков
+    for practitioner, stats in practitioner_stats.items():
+        complexity_avg = round(stats['complexity_total'] / stats['complexity_cnt'], 1) if stats['complexity_cnt'] else None
+        interest_avg = round(stats['interest_total'] / stats['interest_cnt'], 1) if stats['interest_cnt'] else None
+        
+        # Если практик не является лектором, добавляем его в teacher_stats
+        if practitioner not in teacher_stats:
+            teacher_stats[practitioner] = {
+                'complexity': complexity_avg,
+                'interest': interest_avg,
+                'type': 'practitioner'
+            }
+        else:
+            # Если практик также является лектором, добавляем статистику по практикам
+            teacher_stats[practitioner]['practice_complexity'] = complexity_avg
+            teacher_stats[practitioner]['practice_interest'] = interest_avg
+    
+    # Статистика по практикам
+    practitioners_data = defaultdict(list)
+    for review in all_reviews:
+        practitioner = review['practitioner']
+        if practitioner != review['lecturer']:  # Только если практик отличается от лектора
+            practitioners_data[practitioner].append(review)
+    
+    for practitioner_name, reviews in practitioners_data.items():
+        complexity_total, complexity_cnt = 0.0, 0
+        interest_total, interest_cnt = 0.0, 0
+        
+        for review in reviews:
+            # Сложность практик
+            try:
+                if review['practices']['complexity'] != '—':
+                    num = float(review['practices']['complexity'])
+                    complexity_total += num
+                    complexity_cnt += 1
+            except (TypeError, ValueError):
+                pass
+                
+            # Интерес практик
+            try:
+                if review['practices']['interest'] != '—':
+                    num = float(review['practices']['interest'])
+                    interest_total += num
+                    interest_cnt += 1
+            except (TypeError, ValueError):
+                pass
+        
+        complexity_avg = round(complexity_total / complexity_cnt, 1) if complexity_cnt else None
+        interest_avg = round(interest_total / interest_cnt, 1) if interest_cnt else None
+        
+        if practitioner_name not in teacher_stats:
+            teacher_stats[practitioner_name] = {
+                'complexity': complexity_avg,
+                'interest': interest_avg,
+                'type': 'practitioner'
+            }
+    
+    # Группируем преподавателей по предметам для фильтров
+    subjects_with_teachers = {}
+    for review in all_reviews:
+        subject = review['subject']
+        lecturer = review['lecturer']
+        
+        if subject not in subjects_with_teachers:
+            subjects_with_teachers[subject] = {}
+        
+        if lecturer not in subjects_with_teachers[subject]:
+            # Находим всех практиков для этого лектора
+            practitioners = set()
+            for r in all_reviews:
+                if r['lecturer'] == lecturer:
+                    practitioners.add(r['practitioner'])
+            
+            subjects_with_teachers[subject][lecturer] = {
+                'practitioners': sorted(practitioners),
+                'stats': teacher_stats.get(lecturer, {})
+            }
     
     return render_template('reviews.html', 
-                         reviews=all_reviews,
-                         filter_data=filter_data)
+                         reviews_by_subject=dict(reviews_by_subject),
+                         filter_data=filter_data,
+                         teacher_stats=teacher_stats,
+                         subjects_with_teachers=subjects_with_teachers)
 
 
 

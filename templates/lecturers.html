@@ -33,14 +33,14 @@
         </td>
         <td class="text-center align-middle">
           {% if lec.complexity_avg is not none %}
-          <strong style="font-size: 1.1em;">{{ lec.complexity_avg }}</strong>
+          <span title="Средняя сложность: {{ lec.complexity_avg }}/10">💀: {{ lec.complexity_avg }}</span>
           {% else %}
           <span class="text-muted">—</span>
           {% endif %}
         </td>
         <td class="text-center align-middle">
           {% if lec.interest_avg is not none %}
-          <strong style="font-size: 1.1em;">{{ lec.interest_avg }}</strong>
+          <span title="Средний интерес: {{ lec.interest_avg }}/10">⭐️: {{ lec.interest_avg }}</span>
           {% else %}
           <span class="text-muted">—</span>
           {% endif %}
