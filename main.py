@@ -1,8 +1,13 @@
 from flask import Flask, render_template, abort
 import json
 from collections import defaultdict
+import os
 
 app = Flask(__name__)
+
+# Конфигурация для GitHub Pages
+# Устанавливаем APPLICATION_ROOT для работы с подпапкой
+app.config['APPLICATION_ROOT'] = '/ITMOHistoryFeedback'
 
 DATA_PATH = 'data/fidbek po istorii.json'
 

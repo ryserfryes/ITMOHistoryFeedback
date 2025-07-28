@@ -30,10 +30,19 @@ def fix_github_pages_links(html_content, current_path=""):
     html_content = re.sub(r'href="/static/', f'href="{base_path}static/', html_content)
     html_content = re.sub(r'src="/static/', f'src="{base_path}static/', html_content)
     
-    # Исправляем навигационные ссылки
-    html_content = re.sub(r'href="/"', f'href="{base_path}"', html_content)
-    html_content = re.sub(r'href="/lecturers"', f'href="{base_path}lecturers/"', html_content)
-    html_content = re.sub(r'href="/reviews"', f'href="{base_path}reviews/"', html_content)
+    # Исправляем навигационные ссылки - главная страница
+    if current_path == "":
+        html_content = re.sub(r'href="/"', 'href="index.html"', html_content)
+        html_content = re.sub(r'href="/lecturers"', 'href="lecturers/"', html_content)
+        html_content = re.sub(r'href="/reviews"', 'href="reviews/"', html_content)
+    elif current_path in ["lecturers", "reviews"]:
+        html_content = re.sub(r'href="/"', 'href="../"', html_content)
+        html_content = re.sub(r'href="/lecturers"', 'href="../lecturers/"', html_content)
+        html_content = re.sub(r'href="/reviews"', 'href="../reviews/"', html_content)
+    else:  # страницы лекторов
+        html_content = re.sub(r'href="/"', 'href="../../"', html_content)
+        html_content = re.sub(r'href="/lecturers"', 'href="../../lecturers/"', html_content)
+        html_content = re.sub(r'href="/reviews"', 'href="../../reviews/"', html_content)
     
     # Исправляем ссылки на лекторов
     for lecturer_name in LECTURERS.keys():
