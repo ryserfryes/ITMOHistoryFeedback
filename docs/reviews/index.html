@@ -1,0 +1,2269 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Отзывы</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">Главная</a>
+      <div>
+        <a class="nav-link d-inline" href="/lecturers">Лекторы</a>
+        <a class="nav-link d-inline" href="/reviews">Отзывы</a>
+      </div>
+    </div>
+  </nav>
+  
+
+  <div class="container text-center py-4">
+    
+<h1>Все отзывы</h1>
+<p>Всего отзывов: 33</p>
+
+<div class="row">
+    <!-- Левая колонка: фильтры -->
+    <div class="col-md-3 text-start">
+        <strong>Лектор:</strong>
+        <div class="mt-2">
+            <!-- Фильтры по лекторам с подфильтрами практиков -->
+            
+            <div class="lecturer-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input lecturer-filter" type="checkbox" id="lecturer-1"
+                        value="Белоусов Александр Сергеевич" checked>
+                    <label class="form-check-label fw-bold" for="lecturer-1">
+                        Белоусов Александр Сергеевич
+                    </label>
+                </div>
+
+                <!-- Подфильтры по практикам -->
+                <div class="ms-3 mt-1 practitioner-subfilters" data-lecturer="Белоусов Александр Сергеевич">
+                    <small class="text-muted"><strong>Практик:</strong></small>
+                    
+                    
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-1-1" value="Белоусов Александр Сергеевич"
+                            data-lecturer="Белоусов Александр Сергеевич" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-1-1">
+                            Белоусов Александр Сергеевич
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="lecturer-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input lecturer-filter" type="checkbox" id="lecturer-2"
+                        value="Богомазов Николай Иванович" checked>
+                    <label class="form-check-label fw-bold" for="lecturer-2">
+                        Богомазов Николай Иванович
+                    </label>
+                </div>
+
+                <!-- Подфильтры по практикам -->
+                <div class="ms-3 mt-1 practitioner-subfilters" data-lecturer="Богомазов Николай Иванович">
+                    <small class="text-muted"><strong>Практик:</strong></small>
+                    
+                    
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-2-1" value="Богомазов Николай Иванович"
+                            data-lecturer="Богомазов Николай Иванович" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-2-1">
+                            Богомазов Николай Иванович
+                        </label>
+                    </div>
+                    
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-2-2" value="Кутлубаева Дарья Нуровна"
+                            data-lecturer="Богомазов Николай Иванович" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-2-2">
+                            Кутлубаева Дарья Нуровна
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="lecturer-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input lecturer-filter" type="checkbox" id="lecturer-3"
+                        value="Васильев Андрей Владимирович" checked>
+                    <label class="form-check-label fw-bold" for="lecturer-3">
+                        Васильев Андрей Владимирович
+                    </label>
+                </div>
+
+                <!-- Подфильтры по практикам -->
+                <div class="ms-3 mt-1 practitioner-subfilters" data-lecturer="Васильев Андрей Владимирович">
+                    <small class="text-muted"><strong>Практик:</strong></small>
+                    
+                    
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-3-1" value="Васильев Андрей Владимирович"
+                            data-lecturer="Васильев Андрей Владимирович" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-3-1">
+                            Васильев Андрей Владимирович
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="lecturer-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input lecturer-filter" type="checkbox" id="lecturer-4"
+                        value="Вычеров Дмитрий Александрович" checked>
+                    <label class="form-check-label fw-bold" for="lecturer-4">
+                        Вычеров Дмитрий Александрович
+                    </label>
+                </div>
+
+                <!-- Подфильтры по практикам -->
+                <div class="ms-3 mt-1 practitioner-subfilters" data-lecturer="Вычеров Дмитрий Александрович">
+                    <small class="text-muted"><strong>Практик:</strong></small>
+                    
+                    
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-4-1" value="Вычеров Дмитрий Александрович"
+                            data-lecturer="Вычеров Дмитрий Александрович" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-4-1">
+                            Вычеров Дмитрий Александрович
+                        </label>
+                    </div>
+                    
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-4-2" value="Новиков Максим Дмитриевич"
+                            data-lecturer="Вычеров Дмитрий Александрович" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-4-2">
+                            Новиков Максим Дмитриевич
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="lecturer-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input lecturer-filter" type="checkbox" id="lecturer-5"
+                        value="Жиркова Галина Петровна" checked>
+                    <label class="form-check-label fw-bold" for="lecturer-5">
+                        Жиркова Галина Петровна
+                    </label>
+                </div>
+
+                <!-- Подфильтры по практикам -->
+                <div class="ms-3 mt-1 practitioner-subfilters" data-lecturer="Жиркова Галина Петровна">
+                    <small class="text-muted"><strong>Практик:</strong></small>
+                    
+                    
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-5-1" value="Щеглова Иванна Павловна"
+                            data-lecturer="Жиркова Галина Петровна" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-5-1">
+                            Щеглова Иванна Павловна
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="lecturer-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input lecturer-filter" type="checkbox" id="lecturer-6"
+                        value="Мунжукова Светлана Игоревна" checked>
+                    <label class="form-check-label fw-bold" for="lecturer-6">
+                        Мунжукова Светлана Игоревна
+                    </label>
+                </div>
+
+                <!-- Подфильтры по практикам -->
+                <div class="ms-3 mt-1 practitioner-subfilters" data-lecturer="Мунжукова Светлана Игоревна">
+                    <small class="text-muted"><strong>Практик:</strong></small>
+                    
+                    
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-6-1" value="Мунжукова Светлана Игоревна"
+                            data-lecturer="Мунжукова Светлана Игоревна" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-6-1">
+                            Мунжукова Светлана Игоревна
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="lecturer-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input lecturer-filter" type="checkbox" id="lecturer-7"
+                        value="Пригодич Никита Дмитриевич" checked>
+                    <label class="form-check-label fw-bold" for="lecturer-7">
+                        Пригодич Никита Дмитриевич
+                    </label>
+                </div>
+
+                <!-- Подфильтры по практикам -->
+                <div class="ms-3 mt-1 practitioner-subfilters" data-lecturer="Пригодич Никита Дмитриевич">
+                    <small class="text-muted"><strong>Практик:</strong></small>
+                    
+                    
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-7-1" value="Павловская Анастасия Юрьевна"
+                            data-lecturer="Пригодич Никита Дмитриевич" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-7-1">
+                            Павловская Анастасия Юрьевна
+                        </label>
+                    </div>
+                    
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-7-2" value="Пригодич Никита Дмитриевич"
+                            data-lecturer="Пригодич Никита Дмитриевич" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-7-2">
+                            Пригодич Никита Дмитриевич
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Правая колонка: отзывы -->
+    <div class="col-md-9">
+        <div id="reviews-container">
+            
+            <div class="card mb-3 review-item" data-lecturer="Васильев Андрей Владимирович"
+                data-practitioner="Васильев Андрей Владимирович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-1" aria-expanded="true"
+                        aria-controls="review-all-1">
+                        <strong>Отзыв 1</strong>
+                        <small class="text-muted ms-2">История российской науки и техники</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-1" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> не ходил</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> не ходил</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Говорят там бывали какие-то тесты за доп баллы</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Васильев Андрей Владимирович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 2</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Сложным может быть только расписание, а именно его ловушка, когда ты выбираешь удобное время в первом семе, а во втором у тебя нет выбора и ты идёшь на 8:10.
+
+В целом можно сходить на 4 практики за сем и закрыться, надо просто во время этих практик получить задание и потом принести (какой-то доклад обычно).
+
+Во время докладов ты можешь рассказывать не очень подробно, историк подхватывает и начинает говорить за тебя</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Васильев Андрей Владимирович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Пригодич Никита Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-2" aria-expanded="true"
+                        aria-controls="review-all-2">
+                        <strong>Отзыв 2</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-2" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 3</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 3</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Практики намного интереснее лекций, мне было в кайф</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 2</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;"></p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Вычеров Дмитрий Александрович"
+                data-practitioner="Вычеров Дмитрий Александрович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-3" aria-expanded="true"
+                        aria-controls="review-all-3">
+                        <strong>Отзыв 3</strong>
+                        <small class="text-muted ms-2">Реформы и реформаторы в истории России</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-3" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 2</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Лектор ровный мужик, рассказывает нормально, без &#34;ГООЙДААА&#34;, содержание не сильнго скучное, нового ничего не узнал</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Вычеров Дмитрий Александрович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 9</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Крутые интерактивы, интересные вопросы, обсуждали работу государственной пропаганды, анализировали тексты, вообще много работы с источниками</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Вычеров Дмитрий Александрович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Пригодич Никита Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-4" aria-expanded="true"
+                        aria-controls="review-all-4">
+                        <strong>Отзыв 4</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-4" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> не ходил</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> не ходил</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Не ходил, но на каждой лекции в конце были викторины за которые давали доп. баллы и за определенные количество посещенных лекций можно получить доп. баллы. Вел Пригодич, многим было интересно. </p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Практики крутые. Работаем с историческими документами, слушаем презентации по теме от одногруппников, много активностей и доп. заданий за которые так же можно получить доп. баллы. Главное — не просрочивать дедлайны, Пригодич особо не прощает. </p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Павловская Анастасия Юрьевна">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-5" aria-expanded="true"
+                        aria-controls="review-all-5">
+                        <strong>Отзыв 5</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-5" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 6</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Можно слушать, можно не слушать и заниматься своими делами. Стоит ходить, если хочешь получить дополнительные баллы ну или просто интересно. Баллы даются за прохождение квиза в конце лекции. Не советую просить друзей скинуть тебе ссылку и проходить из дома, так как лектор периодически проверяет, кто на лекции, а кто нет</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Обычно практика начинается с того, что кто-то из ребят рассказывает подготовленную презентацию на какую-то тему. В основном за это бОльшая часть баллов проставляется, ну и за посещения. Павловская классный препод, добрый и совсем не строгий, так что к ней спокойно можно записываться. Над презами особо потеть не надо, главное чтоб была. Помимо выступлений иногда делала интерактив на практике, как по мне норм, вообще не напряжно </p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Павловская Анастасия Юрьевна</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Богомазов Николай Иванович"
+                data-practitioner="Богомазов Николай Иванович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-6" aria-expanded="true"
+                        aria-controls="review-all-6">
+                        <strong>Отзыв 6</strong>
+                        <small class="text-muted ms-2">Россия в истории современных международных отношений</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-6" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 8</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 10</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">сидели слушали лекцию (занимались своими делами). после пары проходили квиз, потом по нему определялась посещаемость. за все посещённые лекции давали ~15 баллов. за первые три места по результатам квиза ещё пару баллов. квизы по формату как кахут, на платформе myquiz</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Богомазов Николай Иванович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 8</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 5</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">было невероятно впадлу на них ходить. на практиках выступали с проектами (сходить в музей и потом про него рассказать например). просто сидишь слушаешь. 2 раза за сем рубежка - просто гугл форму заполняешь. не самая простая история из всех, но зато интересно. с проектом тоже похалявить не получится. я ради 4 порвала жеппу :(</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Богомазов Николай Иванович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Вычеров Дмитрий Александрович"
+                data-practitioner="Новиков Максим Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-7" aria-expanded="true"
+                        aria-controls="review-all-7">
+                        <strong>Отзыв 7</strong>
+                        <small class="text-muted ms-2">Реформы и реформаторы в истории России</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-7" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 3</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 1</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Вычеров не ставил баллы за посещения на лекции, если ты опаздывал где-то больше, чем на 10 минут. Он всегда пускает листки A4, в которых люди отмечаются. Какой-либо интерактив сведен к минимуму, так что можно спокойно заниматься своими делами. Кто-то даже играл на ноуте)</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Вычеров Дмитрий Александрович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 2</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Практики проходят без напряга (говорю как тот, кому история максимально неинтересна). В конце практики, кто активничал на ней, подходят ребята и просят +3 доп балла (на самом деле, подходили все, ему похер)</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Новиков Максим Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Васильев Андрей Владимирович"
+                data-practitioner="Васильев Андрей Владимирович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-8" aria-expanded="true"
+                        aria-controls="review-all-8">
+                        <strong>Отзыв 8</strong>
+                        <small class="text-muted ms-2">История российской науки и техники</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-8" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 6</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">лекции - чилл, тем более есть конспекты на https://pelmesh619.github.io/itmo_conspects/
+
+в конце курса Васильев выкладывает ссылку на презентации в мудле
+
+за посещения лекций баллы не ставят
+
+иногда на лекциях дают тесты - халявный балл, тем более, вопросы там элементарные</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Васильев Андрей Владимирович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 2</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 4</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">на практиках можно заниматься своими делами, за одну посещенную практику дают 1 балл (до 12)
+
+в конце раздают задания на следующие практики, там бывают
+презентация (сообщения/доклады) на 10 баллов
+дебаты на 12
+инфографика на 6
+так-то чатгпт на изи справляется, а на это не особо проверяют
+критериев проверки каких-то не заметил, обычно все на фулл оценивается
+
+на практиках могут еще задания дать (у нас было спросить чатгпт, дипсик и других про изобретения и сравнить), они идут в &#34;проблемное задание&#34;
+
+будьте осторожны, так как в конце можно не успеть сдать все (особенно из-за майских), но в конце курса раздают самые прикольные темы (космос, например)
+
+в конце курса дают эссе на 6, открывают гугл табличку с именами изобретателе, можно выбрать понравившегося
+
+советую с кем-то сконнектиться и делать комадный проект на 30 баллов (там можно сайтик на тему сделать или в музей сходить и видосик сделать)
+писать в одиночку научно-исследовательскую работу в принципе тоже норм, но скучно и долго
+
+экзамен в принципе чилл, Васильев прям не душит, если прийти подготовленным</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Васильев Андрей Владимирович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Богомазов Николай Иванович"
+                data-practitioner="Богомазов Николай Иванович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-9" aria-expanded="true"
+                        aria-controls="review-all-9">
+                        <strong>Отзыв 9</strong>
+                        <small class="text-muted ms-2">Россия в истории современных международных отношений</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-9" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 9</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Лектор Богомазов. Рассказывает действительно интересно, не душно, с юмором. Старается по максимуму вовлечь и заинтересовать людей, иногда выкидывает забавные факты о каких-то личностях. Обожает вопросы из зала и мини-дискуссии. За большое количество посещений ставит баллы порядка 12, если пару пропусков - 10, если 4-5 - 8 баллов (точно не помню разбалловку), вообще закрыться легко, но и не скучно, советую</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Богомазов Николай Иванович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 5</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">большую часть времени слушаем заранее подготовленные презенташки от одногруппников по заданным темам в режиме докладчик(получает до 10 баллов, как правило фулл) оппонент(получает до 5 баллов, как правило фулл, задаёт каверзные вопросы, дополняет доклад новой инфой). 2 рубежки по 7 баллов в гугл форме по 4 мин - 4 вопроса с кратким ответом(год, фамилия и тд) гуглятся один с развернутым на подумать - но за его копипасту сразу 0 баллов. ставит по 1 баллу за посещение, по 1 баллу за загруженную в Гугл диск твою фотку в локации, озвученной на прошлой практике. ещё периодически есть доптаски на 1-3 балла типа эссе по фильму и для совсем задротов в течение сема читаешь согласованную заранее книгу на историческую тематику и в конце обсуждаете ~10 баллов вроде. Закрыться легко, советую. Главное не пикать практиком Павловского НН, слышала он душный</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Богомазов Николай Иванович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Богомазов Николай Иванович"
+                data-practitioner="Богомазов Николай Иванович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-10" aria-expanded="true"
+                        aria-controls="review-all-10">
+                        <strong>Отзыв 10</strong>
+                        <small class="text-muted ms-2">Россия в истории современных международных отношений</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-10" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 5</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">лучше ходить на лекции, в конце каждой лекции квизы, минимум 3б нужно набрать, чтобы богомазов зачел твое «посещение»:) </p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Богомазов Николай Иванович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;"> норм, баллы лутаются докладами/контр докладами + рубежки + посещения и активность на практиках + посещение лекций + проектная работа (в 4 семе). на 4 закрыться оч легко, главное ходить и че то делать, быть активным на практиках, норм скатывать рубежки, ну и нужно норм защитить проектную работу в конце (главное группу адекватную набрать, иначе придется все в соло делать). я хз было ли раньше у других групп такое, но нам как будто он поставил почти все баллы наобум)) но главное набрать 60, а остальное не особо важно))</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Богомазов Николай Иванович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Пригодич Никита Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-11" aria-expanded="true"
+                        aria-controls="review-all-11">
+                        <strong>Отзыв 11</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-11" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 9</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Никита Дмитриевич просто лапочка, единственные лекции на 2 курсе (особенно 4 семестр) на которые я ходил. Лекции читает хорошо, слушать интересно, преподаватель умеет вовлекать аудиторию в материал.
+
+На лекциях смотрим презентации, в свободном порядке отвечаем на вопросы, в конце пары на доп баллы проходим квиз (даже если будет 0 баллов, никто снижать не будет). 
+
+Единственное, если сильно не любишь историю, ходить на лекции необходимо, посещение лекций это отдельная колонка в барсе. Я историю люблю, поэтому для меня это проблемой не было!</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 9</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">На практиках мы обсуждаем материал лекции, просто общаемся, иногда читаем исторические документы, после практики в 3 семестре задавал задание на дом, которое делалось 30 минут от силы, в 4 перестал. Преподаватель также задаёт вопросы аудитории. Но! 95% студентов у меня в группе (буквально все кроме меня и ещё двух людей) сидели в ноуте всю пару, и у преподавателя вопросов не было, всё равно ставит баллы.
+
+Да, посещения практик — тоже отдельная колонка в барсе. Максимальное количество баллов можно получить за &#34;посещение и активную работу&#34; — 3 балла; 2 балла можно получить за &#34;посещение&#34; или за выполнение &#34;рефлексии&#34; — идеальный ответ на анкетку по материалу видеолекции (нужно будет самому посмотреть), которую он скидывает в канал после пары. Скажу так — всем, кто посещал практики Никита Дмитриевич вне зависимости от Вашей вовлеченности ставил 3 балла, а вот рефлексии он как раз делал так, чтобы не посмотрев видос (или глубоко не разбираясь в теме), правильно ответить не получится. Так что мой совет — всё же стоит себя пересилить и придти на практику раз в неделю (а в 4 семестре — раз в 2 недели) :)
+
+А, ну и самым большим минусом было время, практика была в 8:10, а лекция через окно в 3 часа. Для кого-то это тоже может быть тяжёлым испытанием.
+
+Подводя итог, и слушая от других ребят про других преподов, я бы никогда не выбрал кого-то другого, кроме Никиты Дмитриевича :)</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Жиркова Галина Петровна"
+                data-practitioner="Щеглова Иванна Павловна">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-12" aria-expanded="true"
+                        aria-controls="review-all-12">
+                        <strong>Отзыв 12</strong>
+                        <small class="text-muted ms-2">История русской культуры в контексте мировой культуры</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-12" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> не ходил</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 1</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Ведёт Жиркова Галина у всех групп, очень любит своё дело и очень не любит, когда её не слушают/не слышать. Мне, к сожалению, слушать её не удавалось из-за стиля повествования. :) 
+Однажды где-то на 3-4 лекции мне нужно было что-то у неё спросить после пары, т.к. мне не было слышно какую-то важную информацию с моего места - мне было высказано что-то типо &#34;а вот надо было слушать!!!!&#34; в очень неприятном тоне. После этого пары не посещались))
+Очень любит проводить всякие доп. мероприятия и за посещение даёт один-два балла, если заполнить форму после онлайн-посещения или прийти очно, но мне то не приходили формы, то не ставились баллы. Не стоит того.
+Плюс любит проводить форму после лекций с материалом с неё с возможностью получить балл за заполнение, но вопросы в анкете крайне специфические, от вас требуется вникать и внимательно следить за всем происходящим все полтора часа, иначе я хз как это предполагается заполнять. В общем, не стоит того.
+Также любит напоминать об обязательности посещения лекций)))</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Жиркова Галина Петровна</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Рассказ обо всех трёх преподавателях ИРК моего года, т.к. со всеми получилось повзаимодействовать.
+1. Щеглова: в целом, норм. Если вам прям нравится история культуры - зайдёт. Мне было скучновато иногда слушать, когда шла куча фактов/описаний какой-то детали, но закрыться было легко.
+2. Мартынова: лапочка, не душит. ОЧЕНЬ легко у неё получить хороший балл и за итоговый проект и за практики. Если будет вариант попасть к ней - берите.
+3. Жиркова: ОЧЕНЬ любит свой предмет, ОЧЕНЬ строго оценивает и (имхо) очень неинтересно рассказывает. Не рекомендую выбирать как практика.
+
+На практиках обычно балл за посещение + балл за работу групповую. Между группами задания иногда совпадают. У Щегловой почти всё можно было прогуглить, но иногда были задания просто группой выйти и описать элементы картины (текст давался, по сути просто доклад-конспект). 
+На ИРК рассказывают сначала культуру древности и про всякие летописи, потом про картины, статуи и архитектуру. Вторая половина рассказывается интересно, если любите о таком слушать. Слушали про популярные картины, стили в целом, про детали и стили в архитектуре. </p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Щеглова Иванна Павловна</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Богомазов Николай Иванович"
+                data-practitioner="Богомазов Николай Иванович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-13" aria-expanded="true"
+                        aria-controls="review-all-13">
+                        <strong>Отзыв 13</strong>
+                        <small class="text-muted ms-2">Россия в истории современных международных отношений</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-13" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 2</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 10</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">по ощущениям, это лучший курс по софт-скиллам (включая кик, тпв, историю и прочие социальные науки), который только может предложить итмо)
+весь учебный год (оба сема) и лектором, и практиком был Богомазов, очень добрый и располагающий к себе препод и как человек очень понимающий, рассказывает супер подробно и супер интересно, со всеми логически вытекающими следствиями всех событий и делает ссылки на прошлые лекции для понимания исторического контекста, слушать приятно, даже на диктофон ставила, но не переслушивала очев, некогда))
+отвечает на все вопросы на парах и в чате, в конце каждой лекции был тест на квизис (5 вопросов, на каждый по 10 секунд, одна попытка ответа), чтобы отметиться на лекции, нужно было ответить хотя бы на один вопрос правильно; когда была общая история, достаточно было просто зайти на тест 
+были презентации на доске, но никуда не выкладывал
+за посещения всех лекций тем, кто у него был в группе на практике, как практик ставил 15 баллов
+«что делали?» — сидели и слушали, че делали, к студентам, у кого наушники в уши вставлены, относится скептически, может даже на лекцию не пустить))</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Богомазов Николай Иванович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 2</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 10</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">практики тоже просто потрясающие, всю систему оценивания расскажут на практиках, когда придет время (первая пара в сентябре, когда начнется общая история, и первая пара в ноябре, когда начнется курс истории международных отношений)
+практики начинались с устных рассказов историка, обсуждений (особо активным ставил 2 балла за практику, просто слушателям 1 балл, если видно, что занимаешься своими делами, то 0), смотрели документалки, в ноябре начались доклады (берешь какую-нибудь тему по согласованию с историком и делаешь по ней сообщение, как в школе, и презентацию, я так в главный штаб Эрмитажа по делу сходила, единственный раз за год в музей выбралась, кстати), за нее 10 баллов, но в феврале-марте практика превратилась в последовательность докладов одногруппников и с историком что-то обсуждали мало, активность == вопросы по докладу 
+на практиках были рубежом иногда, ещё можно было написать эссе по фильму (историк сам говорил, по какому) и/или съездить куда-нибудь, сфоткаться и тоже баллы получить, книжку прочитать и потом с историком обсудить и всё такое, возможностей набрать баллы за практику оч много и на ваш вкус 
+
+из минусов: за практику только 50 баллов, знаю, что некоторые преподы по истории накидывают сверху в счет экзамена, у нас так сделать было нельзя, и 5 без экза не получить</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Богомазов Николай Иванович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Богомазов Николай Иванович"
+                data-practitioner="Богомазов Николай Иванович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-14" aria-expanded="true"
+                        aria-controls="review-all-14">
+                        <strong>Отзыв 14</strong>
+                        <small class="text-muted ms-2">Россия в истории современных международных отношений</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-14" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> не ходил</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">сидел ботал занимался своими делами, приходил чисто тестики писать, иногда когда что то интересное (для меня именно) было, отвлекался, слушал</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Богомазов Николай Иванович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 7</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 10</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">разжевывает темы прям хорошо, но баллы получать туго, надо потеть. имхо если история не интересна особо - не подходящий вариант, под пиво закрыться не получится никак.</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Богомазов Николай Иванович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Вычеров Дмитрий Александрович"
+                data-practitioner="Новиков Максим Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-15" aria-expanded="true"
+                        aria-controls="review-all-15">
+                        <strong>Отзыв 15</strong>
+                        <small class="text-muted ms-2">Реформы и реформаторы в истории России</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-15" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Стандартные активности, рассказывал сам лекции, без бумажек, под конец курса травил истории из своих бородатых времен</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Вычеров Дмитрий Александрович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 6</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Классические задания, ничего сверхестественного</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Новиков Максим Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Богомазов Николай Иванович"
+                data-practitioner="Богомазов Николай Иванович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-16" aria-expanded="true"
+                        aria-controls="review-all-16">
+                        <strong>Отзыв 16</strong>
+                        <small class="text-muted ms-2">Россия в истории современных международных отношений</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-16" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 10</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Лекции пиво. В конце каждой лекции проходит квиз, в котором нужно дать хотя бы 1 правильный ответ и тогда будет засчитано посещение лекции. За посещение каждой лекции ставят баллы (если не ошибаюсь, то 2 балла)</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Богомазов Николай Иванович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 5</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Очень важно посетить первое занятие, так как там выбирают темы презентаций (основной способ получить баллы). Сам препод крутой. Идет на встречу студентам. Баллы ставит по своему усмотрению. Если видит, что ты минимально разобрался в теме, ставит фулл.  На экзамене не душит, доставляет до тройки всем, кто хоть чуток готовился. </p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Богомазов Николай Иванович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Пригодич Никита Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-17" aria-expanded="true"
+                        aria-controls="review-all-17">
+                        <strong>Отзыв 17</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-17" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">На лекциях в сентябре-октябре, как и у всех преподавателей, проходили лекции по истории России, в целом, ничего особенного, просто пересказ школьного курса, позже на лекциях началась собственно история 20 века, где рассказывали обо всех событиях, происходивших в 20 веке во всём мире (от первой мировой до 90 годов). После каждой лекции проходил опрос на сайте myquiz.ru, где отвечали на 10 вопросов, и таким образом отмечались на лекции. Самые лучшие получали доп баллы, 3 балла за 1 место, 2 балла за 2 и 3 места, 1 балл за 4 и 5 места. За посещение 10 лекций даётся 5 доп баллов, за 14 лекций - 10 доп баллов.</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Если хотите послушать про историю 20 века и сравнительно легко закрыться (причём на 5 без экзамена) - идите к Пригодичу. На практиках в основном обсуждаем различные события и т.п., за посещение даётся 0,5 балла, но это только если совсем молчал, если хоть как-то проявлял активность (пусть даже только слово вставил) - получаешь 2 балла. Всего за практики можно набрать 24 баллов, ещё 10 баллов можно получить за сообщение (выступление с презентацией на какую-то тему, 1 раз за весь курс). Домашних заданий немного: эссе (6 баллов), презентация (10 баллов), проект (30 баллов). Эссе - читаешь книгу и обсуждаешь её в зуме. Презентация - идёшь в музей (рекомендую музей обороны и блокады Ленинграда) и делаешь отзыв на него в формате презентации. Проект - либо делаешь один из проектов ЦСиГН, либо делаешь видео в 10 минут на какую-либо тему. Оцениваются задания максимально лояльно, главное - делать всё вовремя.
+
+Разбалловка за 1 модуль (История России):
+32 балла - посещения практик и активность на них (4 балла за практику), домашние задания на moodle (4 баллов за онлайн-практику, т.е. за ДЗ)
+40 баллов - тесты на moodle (5 баллов за каждый тест)
+28 баллов - зачёт
+До 3 баллов за каждый квиз (всего 4 лекции и 4 квиза)
+
+Закрылся на 72,46 баллов (33 балла за практику и 39,46 баллов за тесты), на зачёт не ходил
+
+Разбалловка за 2 модуль (История России и мира в 20 веке):
+24 балла - посещения практик и активность на них (2 балла за практику)
+6 баллов - эссе
+10 баллов - сообщение
+10 баллов - презентация
+30 баллов - проект
+20 баллов - экзамен
+Доп баллы:
+10 баллов - посещения лекций
+До 3 баллов за каждый квиз (всего 12 лекций и 12 квизов)
+По 2 балла за доп активности (объявляется в канале по истории, чаще всего это прийти на доп лекцию и побыть на ней)
+
+Я закрылся у Пригодича на 98 баллов (5 автоматом, за практики 22 балла, но я на последнюю практику не пришёл, за все ДЗ фулл, за квиз 2 балла, за доп активности 8 баллов), на экзамен не ходил</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Белоусов Александр Сергеевич"
+                data-practitioner="Белоусов Александр Сергеевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-18" aria-expanded="true"
+                        aria-controls="review-all-18">
+                        <strong>Отзыв 18</strong>
+                        <small class="text-muted ms-2">История российской науки и техники</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-18" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> не ходил</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> не ходил</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Я сходил только на первую лекцию и всё. Т.к. мне не интересна история и почти уснул, но рассказывает чел хорошо. Насколько я знаю, на лекциях не было квизов и т.п., поэтому смысла ходить нет.</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Белоусов Александр Сергеевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Практики чиловые, можно делать что хочешь, когда начинается профильная история он каждую практику выбирает тех, кто будет делать доклады, зачастую они занимают всю пару, доклад весит 5 баллов, я лично доклады не делал и закрылся. Я ходил на практики и делал почти все через гпт, получал почти максимальные баллы за эти задания. Проект сделал тоже за минут 20. Советую всем, кто не хочет парится по поводу истории.</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Белоусов Александр Сергеевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Богомазов Николай Иванович"
+                data-practitioner="Кутлубаева Дарья Нуровна">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-19" aria-expanded="true"
+                        aria-controls="review-all-19">
+                        <strong>Отзыв 19</strong>
+                        <small class="text-muted ms-2">Россия в истории современных международных отношений</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-19" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 3</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Богомазов очень интересно рассказывает. в конце лекций проводил опросники на основе лекции и раздавал баллы победителям.
+в у26 давал локации и за фото на них к некст лекции давал 1 балл.</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Богомазов Николай Иванович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 6</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 2</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">я был у другого препода.. Алексей Павловский звали. духота.(у26)</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Кутлубаева Дарья Нуровна</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Пригодич Никита Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-20" aria-expanded="true"
+                        aria-controls="review-all-20">
+                        <strong>Отзыв 20</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-20" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Советую пикать пригодича. Занимался у него год, предмет закрывается изи. Чтобы лутать баллы с лекций нужно проходить тесты на них. Сами же лекции ни капельки не душные! Если вы хотите узнать что то новое или же спокойной закрыть предмет, то смело выбирайте никиту дмитриевича! На лекции я не особо часто ходил (как и многие в целом), но закрылся без них. 10 посещенных лекций - 5 баллов, 15 - 10 баллов и 20 лекций - 15 баллов (ну или че то такое). Если же вы умный то можете написать тест очень хорошо (топ 3), подойти в конце лекции и назвать фамилию - накинут доп баллы.</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 10</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Практиком был тоже пригодич. На практиках в основном обсуждают материал лекций. Н.Д. задает вопросы, отвечают по желанию (руку поднимают). В целом, интересно. Обсуждали в целом события, причины и последствия этих событий.  Пригодич довольно интересно преподносит материал,  не душит за неправильные/нелепые ответы/предположения.  Чтобы закрыться нужно ходить на практики (посещение - 2 баллы) и задавать вопросы, отвечать на вопросы (проявлять заинтересованность), ну или хотя бы не сидеть с тупым еблом, а делать вид что тебе интересно. Если не вышло закрыться без экза - идешь на него, он несложный, в целом за ночь легко подготовиться (даже часа 4 хватит, чисто повторить все, ты наверное должен знать +-события второй мировой войны). На экзе пригодич спокойно закрывает. Если б можно было поставить общую оценку как преподу, я бы поставил 10/10. </p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Пригодич Никита Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-21" aria-expanded="true"
+                        aria-controls="review-all-21">
+                        <strong>Отзыв 21</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-21" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 3</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Отмечает по квизу который можно пройти дистанционно, иногда делает доп проверку отмечая еще и в живую. Ходить не обязательно, это просто доп 10 баллов </p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 5</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Практика почти как лекция только больше интерактива. Баллы ставит 0,5 за посещение, если ничего не делал потом можно будет добрать 1 балл за тест. Если сделаешь так чтобы он тебя запомнил всегда будет ставить 2 балла </p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Богомазов Николай Иванович"
+                data-practitioner="Богомазов Николай Иванович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-22" aria-expanded="true"
+                        aria-controls="review-all-22">
+                        <strong>Отзыв 22</strong>
+                        <small class="text-muted ms-2">Россия в истории современных международных отношений</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-22" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 10</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Очень интересно ведет лекции и в целом повествование у него очень структурированное, я, не заинтересованная по жизни Историей очень внимательно слушала на лекциях, но к сожалению великому достаточно сложный преподаватель, редко идет на уступки, но закрыться и даже на хорошие оценки не так сложно, достаточно посещать пары и делать доклады своевременно, не душит</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Богомазов Николай Иванович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 1</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;"></p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Богомазов Николай Иванович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Жиркова Галина Петровна"
+                data-practitioner="Щеглова Иванна Павловна">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-23" aria-expanded="true"
+                        aria-controls="review-all-23">
+                        <strong>Отзыв 23</strong>
+                        <small class="text-muted ms-2">История русской культуры в контексте мировой культуры</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-23" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 3</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 10</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Когда начался основной курс (не вводный общий, а именно история культуры), история стала любимым предметом в этом вузе! Прекрасная подборка материала, примеры картин и других произведения искусства из музеев Петербурга, прослушивание музыкальных произведений на лекциях и вовлечённость лектора – для тех, кому интересна культура, это прекрасный вариант!
+
+К лекциям периодически выкладывались опросы, на которые довольно легко было ответить, если на лекции слушать Галину Петровну и вести конспект (что будет происходить само собой при должном количестве заинтересованности и дисциплины).
+
+Помимо этого проводились сторонние мероприятия (прослушивание дополнительных лекций в зуме или очное присутствие на них), участие в которых давало дополнительные баллы.</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Жиркова Галина Петровна</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 5</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">На практиках было тоже много интересного материала, причём сначала казалось, что больше про европейский/мировой контекст, в то время как на лекциях рассматривали именно  русскую культуру, но со временем и там, и там стало поровну заграничной и отечественной культуры.
+Кроме того, на практиках было много заданий в команде, за которые можно было получить много баллов. Вообще, на данном предмете у меня получилось закрыться на &#34;4&#34; без экзамена и исследовательской работы при выполнении всех заданий (в том числе дополнительных заданий к лекциям, хоть и не всегда, и участия в дополнительных мероприятиях, проводимых в вузе, анонс которых проводила Галина Петровна Жиркова в общем чате). Однако стоит учесть, что в этом году нам почему-то разрешили на практиках набрать дополнительные 20 (30?) баллов, рассчитанные на экзамен (то есть в сумме за предмет можно было набрать 123 балла), а потому &#34;4&#34; получилась за счёт присутствия на практиках и выполнения заданий на них и в качестве домашнего задания.</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Щеглова Иванна Павловна</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Мунжукова Светлана Игоревна"
+                data-practitioner="Мунжукова Светлана Игоревна">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-24" aria-expanded="true"
+                        aria-controls="review-all-24">
+                        <strong>Отзыв 24</strong>
+                        <small class="text-muted ms-2">Социальная история России</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-24" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Мунжукова лектор и практик. На лекциях делаешь что хочешь, в конце проходишь тест на баллы, который по материалу лекции но я всегда дипсикал люто, иногда неправильно конечно но да пох</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Мунжукова Светлана Игоревна</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> не ходил </span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> не ходил</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Как-то так вышло что на многих практиках я не был, и история еще раз в две недели. Я не совсем понял что надо делать и че там с дедлайнами, просрал инфографику и доклад, сдал только эссе и поэтому отлетел на экз, хотя закрыться было мега изи, было еще куча доп активностей типа просмотров фильмов, многие говорят что это тх единственная 5 за всю учебу, ноя  лох. Тем не менее экз легко списался одним запросом в дипсикус на 20/20 и она сжалилась сказала можешь так и быть записать доклад видео и скинуть и на допсу не отлетишь, я так и сделал
+Итого почти всю история просрал но закрылся</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Мунжукова Светлана Игоревна</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Пригодич Никита Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-25" aria-expanded="true"
+                        aria-controls="review-all-25">
+                        <strong>Отзыв 25</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-25" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 6</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Жил ради квизов, самая интересная часть,  а так, большую часть времени спал, Никита Дмитриевич мне понравился, но лекции самые обычные, интересно ходить туда, только если сам сильно увлекаешься историей. С точки зрения полезности, хорошо освежает память, но новое вы вряд ли запомните. Можете заниматься своими делами, главное поучаствовать в квизе, чтобы выбить посещение. ( Дистанционное посещение он иногда контрит, так что на ваш страх и риск) </p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Здесь было поинтереснее чем на лекциях, потому что можно было с Никитой о чем-нибудь пообщаться, рассказать свою точку зрения, поэтому я почти на практиках не спал. Опять же, если вам не нравится история, это будет для вас самые долгие 1,5 часа в жизни. Можете заниматься своими делами, но получите меньше баллов в конце практики (0,5 - 1,5)
+Тем, кто принимает участие, ставит 2 балла</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Белоусов Александр Сергеевич"
+                data-practitioner="Белоусов Александр Сергеевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-26" aria-expanded="true"
+                        aria-controls="review-all-26">
+                        <strong>Отзыв 26</strong>
+                        <small class="text-muted ms-2">История российской науки и техники</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-26" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> не ходил</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> не ходил</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">О лекциях ничего сказать не могу, но Белоусов дает много баллов за конспекты (если сделал все).</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Белоусов Александр Сергеевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 1</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Посещение обязательно (в 3 семе были задания на практиках, в 4 ставил за посещения)
+
+В третьем семестре он еще давал какие-то задания, в четвертом просто задавал нам делать доклад (1 доклад на человека за семестр) и на практиках его презентовать.
+
+Тут нет отдельной формы для этого, поэтому расскажу тут. Дает много работы на дом (эссе, рефераты, рефлексии, рецензии), при этом может дать на их выполнение 2 дня (как было в конце сема).
+
+В ЛС отвечает нехотя, ему еще нужно достучаться.
+
+Если не тупить, у него довольно легко закрыться, просто все задания на дом надо выполнять, и на семинарах присутствовать (лучше на всех, так как пропусков можно допустить только 2-3).</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Белоусов Александр Сергеевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Пригодич Никита Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-27" aria-expanded="true"
+                        aria-controls="review-all-27">
+                        <strong>Отзыв 27</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-27" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 6</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;"></p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 7</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;"></p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Павловская Анастасия Юрьевна">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-28" aria-expanded="true"
+                        aria-controls="review-all-28">
+                        <strong>Отзыв 28</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-28" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Тест в конце лекции для подтверждения посещения</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 5</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 3</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Чтобы нормально закрыться, нужно делать презентаций видео эссе и подобное</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Павловская Анастасия Юрьевна</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Васильев Андрей Владимирович"
+                data-practitioner="Васильев Андрей Владимирович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-29" aria-expanded="true"
+                        aria-controls="review-all-29">
+                        <strong>Отзыв 29</strong>
+                        <small class="text-muted ms-2">История российской науки и техники</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-29" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 5</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 3</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Я была только на одной лекции за все время и она была занудной на мой счёт</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Васильев Андрей Владимирович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 5</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">На практиках мы сначала отвечаем на вопросы по предыдущей лекции, а потом каждый, кто подготовил выступление любого типа, выходит и выступает с ним, за что получаешь баллы. Для меня главное было закрыть предмет и у Васильева было довольно легко для меня.</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Васильев Андрей Владимирович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Пригодич Никита Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-30" aria-expanded="true"
+                        aria-controls="review-all-30">
+                        <strong>Отзыв 30</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-30" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 3</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 6</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">сидишь чилишь, в конце лекции квиз, хорошо написал квиз = +баллы, плохо = поуй</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 3</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">просто слушали его, иногда играли во всякое типо чгк и тп</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Белоусов Александр Сергеевич"
+                data-practitioner="Белоусов Александр Сергеевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-31" aria-expanded="true"
+                        aria-controls="review-all-31">
+                        <strong>Отзыв 31</strong>
+                        <small class="text-muted ms-2">История российской науки и техники</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-31" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 4</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 9</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Очень интересно и круто ведёт
+Много работы чтобы закрыться
+Записи всех лекции - 15 баллов, в конце семестра фиг где ты откопаешь эти записи, так что лучше ходить на все лекции
+Практики - презентации, сделанные тобой по 5 баллов (он вначале берёт всех по списку кто ещё не делал и только потом по второму кругу, в общем, если хочешь - делаешь, если не хочешь - не делаешь), презенташки нужно делать быстро, красиво и интересно
+В остальном, по задачам рецензии на видосики (по 2-3 часа на выполнение уходит) и сочиняжки (гптшутся)</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Белоусов Александр Сергеевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 1</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 7</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;"></p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Белоусов Александр Сергеевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Пригодич Никита Дмитриевич"
+                data-practitioner="Пригодич Никита Дмитриевич">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-32" aria-expanded="true"
+                        aria-controls="review-all-32">
+                        <strong>Отзыв 32</strong>
+                        <small class="text-muted ms-2">История России и мира в ХХ веке</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-32" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 2</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 5</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">На лекциях дают баллы, если сходить на почти все то дадут ещё сверху, советую</p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 3</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 5</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Пригодич топ чел
+Главное слушать его когда он говорит о дедлайнах это ОЧЕНЬ ВАЖНО
+В целом всё, советую</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 review-item" data-lecturer="Богомазов Николай Иванович"
+                data-practitioner="Богомазов Николай Иванович">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-33" aria-expanded="true"
+                        aria-controls="review-all-33">
+                        <strong>Отзыв 33</strong>
+                        <small class="text-muted ms-2">Россия в истории современных международных отношений</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-33" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> не ходил</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> не ходил</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;"></p>
+                            
+                            <small class="text-secondary"><strong>Лектор:</strong> Богомазов Николай Иванович</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    
+                                    <span class="me-3"><strong>Сложность:</strong> 3</span>
+                                    
+                                    
+                                    <span><strong>Интерес:</strong> 8</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">За время практики нужно было прочитать одну книгу и рассказать о ней, плюс микро тест в конце. Баллы набираются легко, рассказывает интересно и не душнит</p>
+                            
+                            <small class="text-secondary"><strong>Практик:</strong> Богомазов Николай Иванович</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const lecturerFilters = document.querySelectorAll('.lecturer-filter');
+        const practitionerFilters = document.querySelectorAll('.practitioner-filter');
+        const reviewItems = document.querySelectorAll('.review-item');
+
+        // Управление индикаторами сворачивания
+        const collapseElements = document.querySelectorAll('[data-bs-toggle="collapse"]');
+
+        collapseElements.forEach(button => {
+            const targetId = button.getAttribute('data-bs-target');
+            const target = document.querySelector(targetId);
+            const indicator = button.querySelector('.collapse-indicator');
+
+            target.addEventListener('show.bs.collapse', function () {
+                indicator.textContent = '−';
+            });
+
+            target.addEventListener('hide.bs.collapse', function () {
+                indicator.textContent = '+';
+            });
+        });
+
+        // Функция фильтрации отзывов
+        function filterReviews() {
+            // Собираем выбранных лекторов и их практиков
+            const selectedFilters = new Map();
+
+            lecturerFilters.forEach(lecturerFilter => {
+                if (lecturerFilter.checked) {
+                    const lecturerName = lecturerFilter.value;
+                    const lecturerPractitioners = [];
+
+                    // Находим практиков для этого лектора
+                    const practitionerSubfilters = document.querySelectorAll(
+                        `.practitioner-filter[data-lecturer="${lecturerName}"]`
+                    );
+
+                    practitionerSubfilters.forEach(pracFilter => {
+                        if (pracFilter.checked) {
+                            lecturerPractitioners.push(pracFilter.value);
+                        }
+                    });
+
+                    if (lecturerPractitioners.length > 0) {
+                        selectedFilters.set(lecturerName, lecturerPractitioners);
+                    }
+                }
+            });
+
+            // Применяем фильтрацию
+            reviewItems.forEach(item => {
+                const itemLecturer = item.dataset.lecturer;
+                const itemPractitioner = item.dataset.practitioner;
+
+                let shouldShow = false;
+
+                if (selectedFilters.has(itemLecturer)) {
+                    const allowedPractitioners = selectedFilters.get(itemLecturer);
+                    if (allowedPractitioners.includes(itemPractitioner)) {
+                        shouldShow = true;
+                    }
+                }
+
+                item.style.display = shouldShow ? 'block' : 'none';
+            });
+        }
+
+
+
+        // Обработчики для фильтров лекторов
+        lecturerFilters.forEach(lecturerFilter => {
+            lecturerFilter.addEventListener('change', function () {
+                if (this.checked) {
+                    // Включаем всех практиков для этого лектора
+                    const lecturerName = this.value;
+                    const practitionerSubfilters = document.querySelectorAll(
+                        `.practitioner-filter[data-lecturer="${lecturerName}"]`
+                    );
+                    practitionerSubfilters.forEach(filter => filter.checked = true);
+                } else {
+                    // Выключаем всех практиков для этого лектора
+                    const lecturerName = this.value;
+                    const practitionerSubfilters = document.querySelectorAll(
+                        `.practitioner-filter[data-lecturer="${lecturerName}"]`
+                    );
+                    practitionerSubfilters.forEach(filter => filter.checked = false);
+                }
+                filterReviews();
+            });
+        });
+
+        // Обработчики для фильтров практиков
+        practitionerFilters.forEach(practitionerFilter => {
+            practitionerFilter.addEventListener('change', function () {
+                const lecturerName = this.dataset.lecturer;
+                const lecturerFilter = document.querySelector(`.lecturer-filter[value="${lecturerName}"]`);
+
+                // Проверяем, есть ли хотя бы один выбранный практик у этого лектора
+                const practitionerSubfilters = document.querySelectorAll(
+                    `.practitioner-filter[data-lecturer="${lecturerName}"]`
+                );
+                const hasSelectedPractitioner = Array.from(practitionerSubfilters).some(filter => filter.checked);
+
+                // Обновляем состояние чекбокса лектора
+                lecturerFilter.checked = hasSelectedPractitioner;
+
+                filterReviews();
+            });
+        });
+
+        // Инициальная фильтрация
+        filterReviews();
+    });
+</script>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/url-mapping.js"></script>
+</body>
+</html>

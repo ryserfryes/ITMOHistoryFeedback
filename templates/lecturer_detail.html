@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="mb-3">
+  <a href="{{ url_for('lecturers') }}" class="btn btn-secondary">← Назад к лекторам</a>
+</div>
+
+<h1>Отзывы о {{ name }}</h1>
+<p>Всего отзывов: {{ responses|length }}</p>
+
+<div class="row">
+  <!-- Левая колонка: фильтр по практику -->
+  <div class="col-md-3 text-start">
+    <strong>Фильтр по практику:</strong>
+    <div class="mt-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="practitioner-filter" id="all-practitioners" value="all"
+          checked>
+        <label class="form-check-label" for="all-practitioners">
+          Все практики
+        </label>
+      </div>
+      {% for practitioner in practitioners %}
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="practitioner-filter" id="prac-{{ loop.index }}"
+          value="{{ practitioner }}">
+        <label class="form-check-label" for="prac-{{ loop.index }}">
+          {{ practitioner }}
+        </label>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Правая колонка: отзывы -->
+  <div class="col-md-9">
+    <div id="reviews-container">
+      {% for resp in responses %}
+      <div class="card mb-3 review-item" data-practitioner="{{ resp.practitioner }}">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-{{ loop.index }}" aria-expanded="true" aria-controls="review-{{ loop.index }}">
+            <strong>Отзыв {{ loop.index }}</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-{{ loop.index }}" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  {% if resp.lectures.complexity != '—' %}
+                  <span class="me-3"><strong>Сложность:</strong> {{ resp.lectures.complexity }}</span>
+                  {% endif %}
+                  {% if resp.lectures.interest != '—' %}
+                  <span><strong>Интерес:</strong> {{ resp.lectures.interest }}</span>
+                  {% endif %}
+                </div>
+              </div>
+              {% if resp.lectures.feedback != '—' %}
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">{{
+                resp.lectures.feedback }}</p>
+              {% else %}
+              <p class="text-muted fst-italic">Отзыв не оставлен</p>
+              {% endif %}
+              <small class="text-secondary"><strong>Лектор:</strong> {{ name }}</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  {% if resp.practices.complexity != '—' %}
+                  <span class="me-3"><strong>Сложность:</strong> {{ resp.practices.complexity }}</span>
+                  {% endif %}
+                  {% if resp.practices.interest != '—' %}
+                  <span><strong>Интерес:</strong> {{ resp.practices.interest }}</span>
+                  {% endif %}
+                </div>
+              </div>
+              {% if resp.practices.feedback != '—' %}
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">{{
+                resp.practices.feedback }}</p>
+              {% else %}
+              <p class="text-muted fst-italic">Отзыв не оставлен</p>
+              {% endif %}
+              {% if resp.practitioner != '—' %}
+              <small class="text-secondary"><strong>Практик:</strong> {{ resp.practitioner }}</small>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const practitionerFilters = document.querySelectorAll('input[name="practitioner-filter"]');
+    const reviewItems = document.querySelectorAll('.review-item');
+
+    // Фильтрация по практикам
+    practitionerFilters.forEach(filter => {
+      filter.addEventListener('change', function () {
+        const selectedPractitioner = this.value;
+
+        reviewItems.forEach(item => {
+          const itemPractitioner = item.dataset.practitioner;
+
+          if (selectedPractitioner === 'all' ||
+            itemPractitioner === selectedPractitioner ||
+            (selectedPractitioner !== 'all' && itemPractitioner === '—')) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Управление индикаторами сворачивания
+    const collapseElements = document.querySelectorAll('[data-bs-toggle="collapse"]');
+
+    collapseElements.forEach(button => {
+      const targetId = button.getAttribute('data-bs-target');
+      const target = document.querySelector(targetId);
+      const indicator = button.querySelector('.collapse-indicator');
+
+      target.addEventListener('show.bs.collapse', function () {
+        indicator.textContent = '−';
+      });
+
+      target.addEventListener('hide.bs.collapse', function () {
+        indicator.textContent = '+';
+      });
+    });
+  });
+</script>
+{% endblock %}

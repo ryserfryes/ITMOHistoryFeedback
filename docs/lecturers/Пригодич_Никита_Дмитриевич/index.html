@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Отзывы</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">Главная</a>
+      <div>
+        <a class="nav-link d-inline" href="/lecturers">Лекторы</a>
+        <a class="nav-link d-inline" href="/reviews">Отзывы</a>
+      </div>
+    </div>
+  </nav>
+  
+
+  <div class="container text-center py-4">
+    
+<div class="mb-3">
+  <a href="/lecturers" class="btn btn-secondary">← Назад к лекторам</a>
+</div>
+
+<h1>Отзывы о Пригодич Никита Дмитриевич</h1>
+<p>Всего отзывов: 12</p>
+
+<div class="row">
+  <!-- Левая колонка: фильтр по практику -->
+  <div class="col-md-3 text-start">
+    <strong>Фильтр по практику:</strong>
+    <div class="mt-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="practitioner-filter" id="all-practitioners" value="all"
+          checked>
+        <label class="form-check-label" for="all-practitioners">
+          Все практики
+        </label>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="practitioner-filter" id="prac-1"
+          value="Павловская Анастасия Юрьевна">
+        <label class="form-check-label" for="prac-1">
+          Павловская Анастасия Юрьевна
+        </label>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="practitioner-filter" id="prac-2"
+          value="Пригодич Никита Дмитриевич">
+        <label class="form-check-label" for="prac-2">
+          Пригодич Никита Дмитриевич
+        </label>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Правая колонка: отзывы -->
+  <div class="col-md-9">
+    <div id="reviews-container">
+      
+      <div class="card mb-3 review-item" data-practitioner="Пригодич Никита Дмитриевич">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-1" aria-expanded="true" aria-controls="review-1">
+            <strong>Отзыв 1</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-1" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 3</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 3</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Практики намного интереснее лекций, мне было в кайф</p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 2</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 8</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;"></p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Пригодич Никита Дмитриевич">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-2" aria-expanded="true" aria-controls="review-2">
+            <strong>Отзыв 2</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-2" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> не ходил</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> не ходил</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Не ходил, но на каждой лекции в конце были викторины за которые давали доп. баллы и за определенные количество посещенных лекций можно получить доп. баллы. Вел Пригодич, многим было интересно. </p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 4</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 8</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Практики крутые. Работаем с историческими документами, слушаем презентации по теме от одногруппников, много активностей и доп. заданий за которые так же можно получить доп. баллы. Главное — не просрочивать дедлайны, Пригодич особо не прощает. </p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Павловская Анастасия Юрьевна">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-3" aria-expanded="true" aria-controls="review-3">
+            <strong>Отзыв 3</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-3" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 1</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 6</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Можно слушать, можно не слушать и заниматься своими делами. Стоит ходить, если хочешь получить дополнительные баллы ну или просто интересно. Баллы даются за прохождение квиза в конце лекции. Не советую просить друзей скинуть тебе ссылку и проходить из дома, так как лектор периодически проверяет, кто на лекции, а кто нет</p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 1</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 7</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Обычно практика начинается с того, что кто-то из ребят рассказывает подготовленную презентацию на какую-то тему. В основном за это бОльшая часть баллов проставляется, ну и за посещения. Павловская классный препод, добрый и совсем не строгий, так что к ней спокойно можно записываться. Над презами особо потеть не надо, главное чтоб была. Помимо выступлений иногда делала интерактив на практике, как по мне норм, вообще не напряжно </p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Павловская Анастасия Юрьевна</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Пригодич Никита Дмитриевич">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-4" aria-expanded="true" aria-controls="review-4">
+            <strong>Отзыв 4</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-4" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 1</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 9</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Никита Дмитриевич просто лапочка, единственные лекции на 2 курсе (особенно 4 семестр) на которые я ходил. Лекции читает хорошо, слушать интересно, преподаватель умеет вовлекать аудиторию в материал.
+
+На лекциях смотрим презентации, в свободном порядке отвечаем на вопросы, в конце пары на доп баллы проходим квиз (даже если будет 0 баллов, никто снижать не будет). 
+
+Единственное, если сильно не любишь историю, ходить на лекции необходимо, посещение лекций это отдельная колонка в барсе. Я историю люблю, поэтому для меня это проблемой не было!</p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 1</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 9</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">На практиках мы обсуждаем материал лекции, просто общаемся, иногда читаем исторические документы, после практики в 3 семестре задавал задание на дом, которое делалось 30 минут от силы, в 4 перестал. Преподаватель также задаёт вопросы аудитории. Но! 95% студентов у меня в группе (буквально все кроме меня и ещё двух людей) сидели в ноуте всю пару, и у преподавателя вопросов не было, всё равно ставит баллы.
+
+Да, посещения практик — тоже отдельная колонка в барсе. Максимальное количество баллов можно получить за &#34;посещение и активную работу&#34; — 3 балла; 2 балла можно получить за &#34;посещение&#34; или за выполнение &#34;рефлексии&#34; — идеальный ответ на анкетку по материалу видеолекции (нужно будет самому посмотреть), которую он скидывает в канал после пары. Скажу так — всем, кто посещал практики Никита Дмитриевич вне зависимости от Вашей вовлеченности ставил 3 балла, а вот рефлексии он как раз делал так, чтобы не посмотрев видос (или глубоко не разбираясь в теме), правильно ответить не получится. Так что мой совет — всё же стоит себя пересилить и придти на практику раз в неделю (а в 4 семестре — раз в 2 недели) :)
+
+А, ну и самым большим минусом было время, практика была в 8:10, а лекция через окно в 3 часа. Для кого-то это тоже может быть тяжёлым испытанием.
+
+Подводя итог, и слушая от других ребят про других преподов, я бы никогда не выбрал кого-то другого, кроме Никиты Дмитриевича :)</p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Пригодич Никита Дмитриевич">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-5" aria-expanded="true" aria-controls="review-5">
+            <strong>Отзыв 5</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-5" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 1</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 8</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">На лекциях в сентябре-октябре, как и у всех преподавателей, проходили лекции по истории России, в целом, ничего особенного, просто пересказ школьного курса, позже на лекциях началась собственно история 20 века, где рассказывали обо всех событиях, происходивших в 20 веке во всём мире (от первой мировой до 90 годов). После каждой лекции проходил опрос на сайте myquiz.ru, где отвечали на 10 вопросов, и таким образом отмечались на лекции. Самые лучшие получали доп баллы, 3 балла за 1 место, 2 балла за 2 и 3 места, 1 балл за 4 и 5 места. За посещение 10 лекций даётся 5 доп баллов, за 14 лекций - 10 доп баллов.</p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 1</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 8</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Если хотите послушать про историю 20 века и сравнительно легко закрыться (причём на 5 без экзамена) - идите к Пригодичу. На практиках в основном обсуждаем различные события и т.п., за посещение даётся 0,5 балла, но это только если совсем молчал, если хоть как-то проявлял активность (пусть даже только слово вставил) - получаешь 2 балла. Всего за практики можно набрать 24 баллов, ещё 10 баллов можно получить за сообщение (выступление с презентацией на какую-то тему, 1 раз за весь курс). Домашних заданий немного: эссе (6 баллов), презентация (10 баллов), проект (30 баллов). Эссе - читаешь книгу и обсуждаешь её в зуме. Презентация - идёшь в музей (рекомендую музей обороны и блокады Ленинграда) и делаешь отзыв на него в формате презентации. Проект - либо делаешь один из проектов ЦСиГН, либо делаешь видео в 10 минут на какую-либо тему. Оцениваются задания максимально лояльно, главное - делать всё вовремя.
+
+Разбалловка за 1 модуль (История России):
+32 балла - посещения практик и активность на них (4 балла за практику), домашние задания на moodle (4 баллов за онлайн-практику, т.е. за ДЗ)
+40 баллов - тесты на moodle (5 баллов за каждый тест)
+28 баллов - зачёт
+До 3 баллов за каждый квиз (всего 4 лекции и 4 квиза)
+
+Закрылся на 72,46 баллов (33 балла за практику и 39,46 баллов за тесты), на зачёт не ходил
+
+Разбалловка за 2 модуль (История России и мира в 20 веке):
+24 балла - посещения практик и активность на них (2 балла за практику)
+6 баллов - эссе
+10 баллов - сообщение
+10 баллов - презентация
+30 баллов - проект
+20 баллов - экзамен
+Доп баллы:
+10 баллов - посещения лекций
+До 3 баллов за каждый квиз (всего 12 лекций и 12 квизов)
+По 2 балла за доп активности (объявляется в канале по истории, чаще всего это прийти на доп лекцию и побыть на ней)
+
+Я закрылся у Пригодича на 98 баллов (5 автоматом, за практики 22 балла, но я на последнюю практику не пришёл, за все ДЗ фулл, за квиз 2 балла, за доп активности 8 баллов), на экзамен не ходил</p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Пригодич Никита Дмитриевич">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-6" aria-expanded="true" aria-controls="review-6">
+            <strong>Отзыв 6</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-6" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 4</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 7</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Советую пикать пригодича. Занимался у него год, предмет закрывается изи. Чтобы лутать баллы с лекций нужно проходить тесты на них. Сами же лекции ни капельки не душные! Если вы хотите узнать что то новое или же спокойной закрыть предмет, то смело выбирайте никиту дмитриевича! На лекции я не особо часто ходил (как и многие в целом), но закрылся без них. 10 посещенных лекций - 5 баллов, 15 - 10 баллов и 20 лекций - 15 баллов (ну или че то такое). Если же вы умный то можете написать тест очень хорошо (топ 3), подойти в конце лекции и назвать фамилию - накинут доп баллы.</p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 4</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 10</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Практиком был тоже пригодич. На практиках в основном обсуждают материал лекций. Н.Д. задает вопросы, отвечают по желанию (руку поднимают). В целом, интересно. Обсуждали в целом события, причины и последствия этих событий.  Пригодич довольно интересно преподносит материал,  не душит за неправильные/нелепые ответы/предположения.  Чтобы закрыться нужно ходить на практики (посещение - 2 баллы) и задавать вопросы, отвечать на вопросы (проявлять заинтересованность), ну или хотя бы не сидеть с тупым еблом, а делать вид что тебе интересно. Если не вышло закрыться без экза - идешь на него, он несложный, в целом за ночь легко подготовиться (даже часа 4 хватит, чисто повторить все, ты наверное должен знать +-события второй мировой войны). На экзе пригодич спокойно закрывает. Если б можно было поставить общую оценку как преподу, я бы поставил 10/10. </p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Пригодич Никита Дмитриевич">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-7" aria-expanded="true" aria-controls="review-7">
+            <strong>Отзыв 7</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-7" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 1</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 3</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Отмечает по квизу который можно пройти дистанционно, иногда делает доп проверку отмечая еще и в живую. Ходить не обязательно, это просто доп 10 баллов </p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 1</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 5</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Практика почти как лекция только больше интерактива. Баллы ставит 0,5 за посещение, если ничего не делал потом можно будет добрать 1 балл за тест. Если сделаешь так чтобы он тебя запомнил всегда будет ставить 2 балла </p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Пригодич Никита Дмитриевич">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-8" aria-expanded="true" aria-controls="review-8">
+            <strong>Отзыв 8</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-8" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 4</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 6</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Жил ради квизов, самая интересная часть,  а так, большую часть времени спал, Никита Дмитриевич мне понравился, но лекции самые обычные, интересно ходить туда, только если сам сильно увлекаешься историей. С точки зрения полезности, хорошо освежает память, но новое вы вряд ли запомните. Можете заниматься своими делами, главное поучаствовать в квизе, чтобы выбить посещение. ( Дистанционное посещение он иногда контрит, так что на ваш страх и риск) </p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 4</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 7</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Здесь было поинтереснее чем на лекциях, потому что можно было с Никитой о чем-нибудь пообщаться, рассказать свою точку зрения, поэтому я почти на практиках не спал. Опять же, если вам не нравится история, это будет для вас самые долгие 1,5 часа в жизни. Можете заниматься своими делами, но получите меньше баллов в конце практики (0,5 - 1,5)
+Тем, кто принимает участие, ставит 2 балла</p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Пригодич Никита Дмитриевич">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-9" aria-expanded="true" aria-controls="review-9">
+            <strong>Отзыв 9</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-9" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 6</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 8</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;"></p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 7</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 7</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;"></p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Павловская Анастасия Юрьевна">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-10" aria-expanded="true" aria-controls="review-10">
+            <strong>Отзыв 10</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-10" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 4</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 7</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Тест в конце лекции для подтверждения посещения</p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 5</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 3</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Чтобы нормально закрыться, нужно делать презентаций видео эссе и подобное</p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Павловская Анастасия Юрьевна</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Пригодич Никита Дмитриевич">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-11" aria-expanded="true" aria-controls="review-11">
+            <strong>Отзыв 11</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-11" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 3</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 6</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">сидишь чилишь, в конце лекции квиз, хорошо написал квиз = +баллы, плохо = поуй</p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 3</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 8</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">просто слушали его, иногда играли во всякое типо чгк и тп</p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 review-item" data-practitioner="Пригодич Никита Дмитриевич">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-12" aria-expanded="true" aria-controls="review-12">
+            <strong>Отзыв 12</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-12" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 2</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 5</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">На лекциях дают баллы, если сходить на почти все то дадут ещё сверху, советую</p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Пригодич Никита Дмитриевич</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 3</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 5</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Пригодич топ чел
+Главное слушать его когда он говорит о дедлайнах это ОЧЕНЬ ВАЖНО
+В целом всё, советую</p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Пригодич Никита Дмитриевич</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const practitionerFilters = document.querySelectorAll('input[name="practitioner-filter"]');
+    const reviewItems = document.querySelectorAll('.review-item');
+
+    // Фильтрация по практикам
+    practitionerFilters.forEach(filter => {
+      filter.addEventListener('change', function () {
+        const selectedPractitioner = this.value;
+
+        reviewItems.forEach(item => {
+          const itemPractitioner = item.dataset.practitioner;
+
+          if (selectedPractitioner === 'all' ||
+            itemPractitioner === selectedPractitioner ||
+            (selectedPractitioner !== 'all' && itemPractitioner === '—')) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Управление индикаторами сворачивания
+    const collapseElements = document.querySelectorAll('[data-bs-toggle="collapse"]');
+
+    collapseElements.forEach(button => {
+      const targetId = button.getAttribute('data-bs-target');
+      const target = document.querySelector(targetId);
+      const indicator = button.querySelector('.collapse-indicator');
+
+      target.addEventListener('show.bs.collapse', function () {
+        indicator.textContent = '−';
+      });
+
+      target.addEventListener('hide.bs.collapse', function () {
+        indicator.textContent = '+';
+      });
+    });
+  });
+</script>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/url-mapping.js"></script>
+</body>
+</html>

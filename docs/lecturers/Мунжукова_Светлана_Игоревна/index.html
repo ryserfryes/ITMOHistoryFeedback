@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Отзывы</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">Главная</a>
+      <div>
+        <a class="nav-link d-inline" href="/lecturers">Лекторы</a>
+        <a class="nav-link d-inline" href="/reviews">Отзывы</a>
+      </div>
+    </div>
+  </nav>
+  
+
+  <div class="container text-center py-4">
+    
+<div class="mb-3">
+  <a href="/lecturers" class="btn btn-secondary">← Назад к лекторам</a>
+</div>
+
+<h1>Отзывы о Мунжукова Светлана Игоревна</h1>
+<p>Всего отзывов: 1</p>
+
+<div class="row">
+  <!-- Левая колонка: фильтр по практику -->
+  <div class="col-md-3 text-start">
+    <strong>Фильтр по практику:</strong>
+    <div class="mt-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="practitioner-filter" id="all-practitioners" value="all"
+          checked>
+        <label class="form-check-label" for="all-practitioners">
+          Все практики
+        </label>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="practitioner-filter" id="prac-1"
+          value="Мунжукова Светлана Игоревна">
+        <label class="form-check-label" for="prac-1">
+          Мунжукова Светлана Игоревна
+        </label>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Правая колонка: отзывы -->
+  <div class="col-md-9">
+    <div id="reviews-container">
+      
+      <div class="card mb-3 review-item" data-practitioner="Мунжукова Светлана Игоревна">
+        <div class="card-header">
+          <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" data-bs-toggle="collapse"
+            data-bs-target="#review-1" aria-expanded="true" aria-controls="review-1">
+            <strong>Отзыв 1</strong>
+            <span class="float-end collapse-indicator">−</span>
+          </button>
+        </div>
+        <div id="review-1" class="collapse show">
+          <div class="card-body">
+            <!-- О лекциях -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О лекциях:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> 1</span>
+                  
+                  
+                  <span><strong>Интерес:</strong> 8</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Мунжукова лектор и практик. На лекциях делаешь что хочешь, в конце проходишь тест на баллы, который по материалу лекции но я всегда дипсикал люто, иногда неправильно конечно но да пох</p>
+              
+              <small class="text-secondary"><strong>Лектор:</strong> Мунжукова Светлана Игоревна</small>
+            </div>
+
+            <!-- О практиках -->
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">О практиках:</h5>
+                <div class="text-end">
+                  
+                  <span class="me-3"><strong>Сложность:</strong> не ходил </span>
+                  
+                  
+                  <span><strong>Интерес:</strong> не ходил</span>
+                  
+                </div>
+              </div>
+              
+              <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">Как-то так вышло что на многих практиках я не был, и история еще раз в две недели. Я не совсем понял что надо делать и че там с дедлайнами, просрал инфографику и доклад, сдал только эссе и поэтому отлетел на экз, хотя закрыться было мега изи, было еще куча доп активностей типа просмотров фильмов, многие говорят что это тх единственная 5 за всю учебу, ноя  лох. Тем не менее экз легко списался одним запросом в дипсикус на 20/20 и она сжалилась сказала можешь так и быть записать доклад видео и скинуть и на допсу не отлетишь, я так и сделал
+Итого почти всю история просрал но закрылся</p>
+              
+              
+              <small class="text-secondary"><strong>Практик:</strong> Мунжукова Светлана Игоревна</small>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const practitionerFilters = document.querySelectorAll('input[name="practitioner-filter"]');
+    const reviewItems = document.querySelectorAll('.review-item');
+
+    // Фильтрация по практикам
+    practitionerFilters.forEach(filter => {
+      filter.addEventListener('change', function () {
+        const selectedPractitioner = this.value;
+
+        reviewItems.forEach(item => {
+          const itemPractitioner = item.dataset.practitioner;
+
+          if (selectedPractitioner === 'all' ||
+            itemPractitioner === selectedPractitioner ||
+            (selectedPractitioner !== 'all' && itemPractitioner === '—')) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Управление индикаторами сворачивания
+    const collapseElements = document.querySelectorAll('[data-bs-toggle="collapse"]');
+
+    collapseElements.forEach(button => {
+      const targetId = button.getAttribute('data-bs-target');
+      const target = document.querySelector(targetId);
+      const indicator = button.querySelector('.collapse-indicator');
+
+      target.addEventListener('show.bs.collapse', function () {
+        indicator.textContent = '−';
+      });
+
+      target.addEventListener('hide.bs.collapse', function () {
+        indicator.textContent = '+';
+      });
+    });
+  });
+</script>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/url-mapping.js"></script>
+</body>
+</html>

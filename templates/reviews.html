@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Все отзывы</h1>
+<p>Всего отзывов: {{ reviews|length }}</p>
+
+<div class="row">
+    <!-- Левая колонка: фильтры -->
+    <div class="col-md-3 text-start">
+        <strong>Лектор:</strong>
+        <div class="mt-2">
+            <!-- Фильтры по лекторам с подфильтрами практиков -->
+            {% for lecturer_data in filter_data %}
+            <div class="lecturer-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input lecturer-filter" type="checkbox" id="lecturer-{{ loop.index }}"
+                        value="{{ lecturer_data.lecturer }}" checked>
+                    <label class="form-check-label fw-bold" for="lecturer-{{ loop.index }}">
+                        {{ lecturer_data.lecturer }}
+                    </label>
+                </div>
+
+                <!-- Подфильтры по практикам -->
+                <div class="ms-3 mt-1 practitioner-subfilters" data-lecturer="{{ lecturer_data.lecturer }}">
+                    <small class="text-muted"><strong>Практик:</strong></small>
+                    {% set outer_loop = loop %}
+                    {% for practitioner in lecturer_data.practitioners %}
+                    <div class="form-check form-check-sm">
+                        <input class="form-check-input practitioner-filter" type="checkbox"
+                            id="prac-{{ outer_loop.index }}-{{ loop.index }}" value="{{ practitioner }}"
+                            data-lecturer="{{ lecturer_data.lecturer }}" checked>
+                        <label class="form-check-label text-muted small"
+                            for="prac-{{ outer_loop.index }}-{{ loop.index }}">
+                            {{ practitioner }}
+                        </label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Правая колонка: отзывы -->
+    <div class="col-md-9">
+        <div id="reviews-container">
+            {% for review in reviews %}
+            <div class="card mb-3 review-item" data-lecturer="{{ review.lecturer }}"
+                data-practitioner="{{ review.practitioner }}">
+                <div class="card-header">
+                    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#review-all-{{ loop.index }}" aria-expanded="true"
+                        aria-controls="review-all-{{ loop.index }}">
+                        <strong>Отзыв {{ loop.index }}</strong>
+                        <small class="text-muted ms-2">{{ review.subject }}</small>
+                        <span class="float-end collapse-indicator">−</span>
+                    </button>
+                </div>
+                <div id="review-all-{{ loop.index }}" class="collapse show">
+                    <div class="card-body">
+                        <!-- О лекциях -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О лекциях:</h5>
+                                <div class="text-end">
+                                    {% if review.lectures.complexity != '—' %}
+                                    <span class="me-3"><strong>Сложность:</strong> {{ review.lectures.complexity
+                                        }}</span>
+                                    {% endif %}
+                                    {% if review.lectures.interest != '—' %}
+                                    <span><strong>Интерес:</strong> {{ review.lectures.interest }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% if review.lectures.feedback != '—' %}
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">{{
+                                review.lectures.feedback }}</p>
+                            {% else %}
+                            <p class="text-muted fst-italic">Отзыв не оставлен</p>
+                            {% endif %}
+                            <small class="text-secondary"><strong>Лектор:</strong> {{ review.lecturer }}</small>
+                        </div>
+
+                        <!-- О практиках -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">О практиках:</h5>
+                                <div class="text-end">
+                                    {% if review.practices.complexity != '—' %}
+                                    <span class="me-3"><strong>Сложность:</strong> {{ review.practices.complexity
+                                        }}</span>
+                                    {% endif %}
+                                    {% if review.practices.interest != '—' %}
+                                    <span><strong>Интерес:</strong> {{ review.practices.interest }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% if review.practices.feedback != '—' %}
+                            <p class="text-muted text-justify" style="text-align: justify; white-space: pre-line;">{{
+                                review.practices.feedback }}</p>
+                            {% else %}
+                            <p class="text-muted fst-italic">Отзыв не оставлен</p>
+                            {% endif %}
+                            <small class="text-secondary"><strong>Практик:</strong> {{ review.practitioner }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const lecturerFilters = document.querySelectorAll('.lecturer-filter');
+        const practitionerFilters = document.querySelectorAll('.practitioner-filter');
+        const reviewItems = document.querySelectorAll('.review-item');
+
+        // Управление индикаторами сворачивания
+        const collapseElements = document.querySelectorAll('[data-bs-toggle="collapse"]');
+
+        collapseElements.forEach(button => {
+            const targetId = button.getAttribute('data-bs-target');
+            const target = document.querySelector(targetId);
+            const indicator = button.querySelector('.collapse-indicator');
+
+            target.addEventListener('show.bs.collapse', function () {
+                indicator.textContent = '−';
+            });
+
+            target.addEventListener('hide.bs.collapse', function () {
+                indicator.textContent = '+';
+            });
+        });
+
+        // Функция фильтрации отзывов
+        function filterReviews() {
+            // Собираем выбранных лекторов и их практиков
+            const selectedFilters = new Map();
+
+            lecturerFilters.forEach(lecturerFilter => {
+                if (lecturerFilter.checked) {
+                    const lecturerName = lecturerFilter.value;
+                    const lecturerPractitioners = [];
+
+                    // Находим практиков для этого лектора
+                    const practitionerSubfilters = document.querySelectorAll(
+                        `.practitioner-filter[data-lecturer="${lecturerName}"]`
+                    );
+
+                    practitionerSubfilters.forEach(pracFilter => {
+                        if (pracFilter.checked) {
+                            lecturerPractitioners.push(pracFilter.value);
+                        }
+                    });
+
+                    if (lecturerPractitioners.length > 0) {
+                        selectedFilters.set(lecturerName, lecturerPractitioners);
+                    }
+                }
+            });
+
+            // Применяем фильтрацию
+            reviewItems.forEach(item => {
+                const itemLecturer = item.dataset.lecturer;
+                const itemPractitioner = item.dataset.practitioner;
+
+                let shouldShow = false;
+
+                if (selectedFilters.has(itemLecturer)) {
+                    const allowedPractitioners = selectedFilters.get(itemLecturer);
+                    if (allowedPractitioners.includes(itemPractitioner)) {
+                        shouldShow = true;
+                    }
+                }
+
+                item.style.display = shouldShow ? 'block' : 'none';
+            });
+        }
+
+
+
+        // Обработчики для фильтров лекторов
+        lecturerFilters.forEach(lecturerFilter => {
+            lecturerFilter.addEventListener('change', function () {
+                if (this.checked) {
+                    // Включаем всех практиков для этого лектора
+                    const lecturerName = this.value;
+                    const practitionerSubfilters = document.querySelectorAll(
+                        `.practitioner-filter[data-lecturer="${lecturerName}"]`
+                    );
+                    practitionerSubfilters.forEach(filter => filter.checked = true);
+                } else {
+                    // Выключаем всех практиков для этого лектора
+                    const lecturerName = this.value;
+                    const practitionerSubfilters = document.querySelectorAll(
+                        `.practitioner-filter[data-lecturer="${lecturerName}"]`
+                    );
+                    practitionerSubfilters.forEach(filter => filter.checked = false);
+                }
+                filterReviews();
+            });
+        });
+
+        // Обработчики для фильтров практиков
+        practitionerFilters.forEach(practitionerFilter => {
+            practitionerFilter.addEventListener('change', function () {
+                const lecturerName = this.dataset.lecturer;
+                const lecturerFilter = document.querySelector(`.lecturer-filter[value="${lecturerName}"]`);
+
+                // Проверяем, есть ли хотя бы один выбранный практик у этого лектора
+                const practitionerSubfilters = document.querySelectorAll(
+                    `.practitioner-filter[data-lecturer="${lecturerName}"]`
+                );
+                const hasSelectedPractitioner = Array.from(practitionerSubfilters).some(filter => filter.checked);
+
+                // Обновляем состояние чекбокса лектора
+                lecturerFilter.checked = hasSelectedPractitioner;
+
+                filterReviews();
+            });
+        });
+
+        // Инициальная фильтрация
+        filterReviews();
+    });
+</script>
+{% endblock %}

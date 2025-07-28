@@ -1,0 +1,42 @@
+name: Update Site Data
+
+# Запускается при изменении файла с данными, по расписанию или через webhook
+on:
+  push:
+    paths:
+      - 'data/fidbek po istorii.json'
+  schedule:
+    # Проверяет обновления каждый день в 6:00 UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Позволяет запускать вручную
+  repository_dispatch:
+    types: [update-site] # Запускается через webhook
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        pip install flask
+        
+    - name: Generate static files
+      run: |
+        python generate_static.py
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add docs/
+        git diff --staged --quiet || git commit -m "Auto-update static files"
+        git push

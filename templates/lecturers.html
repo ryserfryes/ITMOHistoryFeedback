@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Лекторы</h1>
+
+<div class="container-fluid">
+  <table class="table table-hover" id="lecturers-table">
+    <thead class="table-light">
+      <tr>
+        <th scope="col" class="sortable text-start" data-sort="name" style="cursor: pointer; user-select: none;">
+          Лектор <span class="sort-arrow">↕</span>
+        </th>
+        <th scope="col" class="sortable text-center" data-sort="complexity" style="cursor: pointer; user-select: none;">
+          Сложность <span class="sort-arrow">↕</span>
+        </th>
+        <th scope="col" class="sortable text-center" data-sort="interest" style="cursor: pointer; user-select: none;">
+          Интерес <span class="sort-arrow">↕</span>
+        </th>
+        <th scope="col" class="sortable text-center" data-sort="reviews" style="cursor: pointer; user-select: none;">
+          Отзывы <span class="sort-arrow">↕</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for lec in lecturers %}
+      <tr class="lecturer-row" data-name="{{ lec.name }}" data-complexity="{{ lec.complexity_avg or 0 }}"
+        data-interest="{{ lec.interest_avg or 0 }}" data-reviews="{{ lec.reviews }}">
+        <td class="text-start">
+          <a href="{{ url_for('lecturer_detail', name=lec.name) }}" class="text-decoration-none lecturer-link" data-lecturer="{{ lec.name }}">
+            <strong>{{ lec.name }}</strong>
+          </a>
+          <br>
+          <small class="text-muted">{{ lec.subjects }}</small>
+        </td>
+        <td class="text-center align-middle">
+          {% if lec.complexity_avg is not none %}
+          <strong style="font-size: 1.1em;">{{ lec.complexity_avg }}</strong>
+          {% else %}
+          <span class="text-muted">—</span>
+          {% endif %}
+        </td>
+        <td class="text-center align-middle">
+          {% if lec.interest_avg is not none %}
+          <strong style="font-size: 1.1em;">{{ lec.interest_avg }}</strong>
+          {% else %}
+          <span class="text-muted">—</span>
+          {% endif %}
+        </td>
+        <td class="text-center align-middle">
+          <strong style="font-size: 1.1em;">{{ lec.reviews }}</strong>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .sortable:hover {
+    background-color: #e9ecef;
+  }
+
+  .sort-arrow {
+    font-size: 0.8em;
+    color: #6c757d;
+  }
+
+  .sortable.asc .sort-arrow::before {
+    content: "↑";
+  }
+
+  .sortable.desc .sort-arrow::before {
+    content: "↓";
+  }
+
+  .sortable.asc .sort-arrow,
+  .sortable.desc .sort-arrow {
+    color: #0d6efd;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const table = document.getElementById('lecturers-table');
+    const tbody = table.querySelector('tbody');
+    let currentSort = { column: null, direction: 'asc' };
+
+    // Добавляем обработчики кликов на заголовки
+    document.querySelectorAll('.sortable').forEach(header => {
+      header.addEventListener('click', function () {
+        const sortBy = this.dataset.sort;
+
+        // Определяем направление сортировки
+        if (currentSort.column === sortBy) {
+          currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+        } else {
+          currentSort.direction = 'desc'; // По умолчанию сортируем по убыванию для рейтингов
+          if (sortBy === 'name') {
+            currentSort.direction = 'asc'; // Для имен по возрастанию
+          }
+        }
+        currentSort.column = sortBy;
+
+        // Обновляем визуальные индикаторы
+        document.querySelectorAll('.sortable').forEach(h => {
+          h.classList.remove('asc', 'desc');
+          h.querySelector('.sort-arrow').textContent = '↕';
+        });
+
+        this.classList.add(currentSort.direction);
+
+        // Сортируем строки
+        sortTable(sortBy, currentSort.direction);
+      });
+    });
+
+    function sortTable(column, direction) {
+      const rows = Array.from(tbody.querySelectorAll('.lecturer-row'));
+
+      rows.sort((a, b) => {
+        let aVal, bVal;
+
+        if (column === 'name') {
+          aVal = a.dataset.name.toLowerCase();
+          bVal = b.dataset.name.toLowerCase();
+          return direction === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+        } else {
+          aVal = parseFloat(a.dataset[column]) || 0;
+          bVal = parseFloat(b.dataset[column]) || 0;
+          return direction === 'asc' ? aVal - bVal : bVal - aVal;
+        }
+      });
+
+      // Перестраиваем таблицу
+      rows.forEach(row => tbody.appendChild(row));
+    }
+
+    // Инициальная сортировка по сложности (по убыванию)
+    document.querySelector('[data-sort="complexity"]').click();
+  });
+</script>
+{% endblock %}
