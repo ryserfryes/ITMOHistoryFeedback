@@ -14,6 +14,49 @@ def safe_filename(name):
     safe_name = name.replace(' ', '_').replace('/', '_').replace('\\', '_')
     return safe_name
 
+def fix_github_pages_links(html_content, current_path=""):
+    """Исправляет ссылки для работы на GitHub Pages"""
+    import re
+    
+    # Определяем базовый путь в зависимости от текущей страницы
+    if current_path == "":  # главная страница
+        base_path = "./"
+    elif current_path in ["lecturers", "reviews"]:  # страницы первого уровня
+        base_path = "../"
+    else:  # страницы лекторов (lecturers/name/)
+        base_path = "../../"
+    
+    # Исправляем ссылки на статические файлы
+    html_content = re.sub(r'href="/static/', f'href="{base_path}static/', html_content)
+    html_content = re.sub(r'src="/static/', f'src="{base_path}static/', html_content)
+    
+    # Исправляем навигационные ссылки
+    html_content = re.sub(r'href="/"', f'href="{base_path}"', html_content)
+    html_content = re.sub(r'href="/lecturers"', f'href="{base_path}lecturers/"', html_content)
+    html_content = re.sub(r'href="/reviews"', f'href="{base_path}reviews/"', html_content)
+    
+    # Исправляем ссылки на лекторов
+    for lecturer_name in LECTURERS.keys():
+        safe_name = safe_filename(lecturer_name)
+        encoded_name = quote(lecturer_name.encode('utf-8'))
+        
+        # Заменяем ссылки вида /lecturers/Имя%20Лектора на относительные пути
+        pattern = f'href="/lecturers/{re.escape(encoded_name)}"'
+        if current_path == "":  # с главной страницы
+            replacement = f'href="lecturers/{safe_name}/"'
+        elif current_path == "lecturers":  # со страницы списка лекторов
+            replacement = f'href="{safe_name}/"'
+        else:  # с других страниц
+            replacement = f'href="../{safe_name}/"'
+        
+        html_content = re.sub(pattern, replacement, html_content)
+        
+        # Также обрабатываем не-encoded версии
+        pattern2 = f'href="/lecturers/{re.escape(lecturer_name)}"'
+        html_content = re.sub(pattern2, replacement, html_content)
+    
+    return html_content
+
 def generate_static_site():
     """Генерирует статический сайт"""
     
@@ -37,22 +80,28 @@ def generate_static_site():
         print("Генерация главной страницы...")
         with app.test_client() as client:
             response = client.get('/')
+            html_content = response.get_data(as_text=True)
+            fixed_html = fix_github_pages_links(html_content, "")
             with open('docs/index.html', 'w', encoding='utf-8') as f:
-                f.write(response.get_data(as_text=True))
+                f.write(fixed_html)
         
         # Генерируем страницу лекторов
         print("Генерация страницы лекторов...")
         with app.test_client() as client:
             response = client.get('/lecturers')
+            html_content = response.get_data(as_text=True)
+            fixed_html = fix_github_pages_links(html_content, "lecturers")
             with open('docs/lecturers/index.html', 'w', encoding='utf-8') as f:
-                f.write(response.get_data(as_text=True))
+                f.write(fixed_html)
         
         # Генерируем страницу отзывов
         print("Генерация страницы отзывов...")
         with app.test_client() as client:
             response = client.get('/reviews')
+            html_content = response.get_data(as_text=True)
+            fixed_html = fix_github_pages_links(html_content, "reviews")
             with open('docs/reviews/index.html', 'w', encoding='utf-8') as f:
-                f.write(response.get_data(as_text=True))
+                f.write(fixed_html)
         
         # Генерируем страницы для каждого лектора
         print("Генерация страниц лекторов...")
@@ -64,8 +113,10 @@ def generate_static_site():
             with app.test_client() as client:
                 response = client.get(f'/lecturers/{lecturer_name}')
                 if response.status_code == 200:
+                    html_content = response.get_data(as_text=True)
+                    fixed_html = fix_github_pages_links(html_content, f"lecturers/{safe_name}")
                     with open(f'{lecturer_dir}/index.html', 'w', encoding='utf-8') as f:
-                        f.write(response.get_data(as_text=True))
+                        f.write(fixed_html)
                     print(f"  ✓ {lecturer_name}")
                 else:
                     print(f"  ✗ Ошибка для {lecturer_name}: {response.status_code}")
