@@ -30,16 +30,29 @@ def fix_github_pages_links(html_content, current_path=""):
     html_content = re.sub(r'href="/static/', f'href="{base_path}static/', html_content)
     html_content = re.sub(r'src="/static/', f'src="{base_path}static/', html_content)
     
-    # Исправляем навигационные ссылки - главная страница
+    # Исправляем навигационные ссылки с учетом APPLICATION_ROOT
+    # Заменяем абсолютные пути с APPLICATION_ROOT на относительные
     if current_path == "":
+        html_content = re.sub(r'href="/ITMOHistoryFeedback/"', 'href="index.html"', html_content)
+        html_content = re.sub(r'href="/ITMOHistoryFeedback/lecturers"', 'href="lecturers/"', html_content)
+        html_content = re.sub(r'href="/ITMOHistoryFeedback/reviews"', 'href="reviews/"', html_content)
+        # Также обрабатываем старые пути без APPLICATION_ROOT
         html_content = re.sub(r'href="/"', 'href="index.html"', html_content)
         html_content = re.sub(r'href="/lecturers"', 'href="lecturers/"', html_content)
         html_content = re.sub(r'href="/reviews"', 'href="reviews/"', html_content)
     elif current_path in ["lecturers", "reviews"]:
+        html_content = re.sub(r'href="/ITMOHistoryFeedback/"', 'href="../"', html_content)
+        html_content = re.sub(r'href="/ITMOHistoryFeedback/lecturers"', 'href="../lecturers/"', html_content)
+        html_content = re.sub(r'href="/ITMOHistoryFeedback/reviews"', 'href="../reviews/"', html_content)
+        # Также обрабатываем старые пути без APPLICATION_ROOT
         html_content = re.sub(r'href="/"', 'href="../"', html_content)
         html_content = re.sub(r'href="/lecturers"', 'href="../lecturers/"', html_content)
         html_content = re.sub(r'href="/reviews"', 'href="../reviews/"', html_content)
     else:  # страницы лекторов
+        html_content = re.sub(r'href="/ITMOHistoryFeedback/"', 'href="../../"', html_content)
+        html_content = re.sub(r'href="/ITMOHistoryFeedback/lecturers"', 'href="../../lecturers/"', html_content)
+        html_content = re.sub(r'href="/ITMOHistoryFeedback/reviews"', 'href="../../reviews/"', html_content)
+        # Также обрабатываем старые пути без APPLICATION_ROOT
         html_content = re.sub(r'href="/"', 'href="../../"', html_content)
         html_content = re.sub(r'href="/lecturers"', 'href="../../lecturers/"', html_content)
         html_content = re.sub(r'href="/reviews"', 'href="../../reviews/"', html_content)
